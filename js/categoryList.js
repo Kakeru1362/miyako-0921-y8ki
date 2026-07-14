@@ -2,7 +2,24 @@
 // 全日程を横断して「その分類に何の予定があるか」を一覧で見せる。
 
 import { CATEGORY_MAP, TRIP_DATES, weekdayJa } from './categories.js'
-import { sortEvents } from './timeline.js'
+
+function minutesOf(time) {
+  if (!time) return null
+  const [h, m] = time.split(':').map(Number)
+  return h * 60 + m
+}
+
+// 時刻あり → 時刻順、時刻なし → 末尾（作成順）
+function sortEvents(entries) {
+  return [...entries].sort(([, a], [, b]) => {
+    const ma = minutesOf(a.start)
+    const mb = minutesOf(b.start)
+    if (ma === null && mb === null) return (a.createdAt || 0) - (b.createdAt || 0)
+    if (ma === null) return 1
+    if (mb === null) return -1
+    return ma - mb
+  })
+}
 
 function el(tag, className, text) {
   const node = document.createElement(tag)

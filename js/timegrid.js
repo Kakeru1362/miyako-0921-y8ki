@@ -28,12 +28,6 @@ function el(tag, className, text) {
   return node
 }
 
-function matchFilter(ev, filter) {
-  if (filter === 'all') return true
-  if (filter === 'reserved') return ev.reserved
-  return ev.category === filter
-}
-
 // 重なる予定をクラスタにまとめ、列番号と列数を割り当てる
 function layoutBlocks(timed) {
   const sorted = [...timed].sort((a, b) => a.startMin - b.startMin || a.endMin - b.endMin)
@@ -108,9 +102,9 @@ function buildBlock(block, gridStartMin, onOpen) {
 }
 
 // events: {id: event}。onOpen(id, ev)=詳細表示、onAddAt(time)=空き時間タップで追加
-export function renderTimeGrid(container, { events, date, filter, onOpen, onAddAt }) {
+export function renderTimeGrid(container, { events, date, onOpen, onAddAt }) {
   const entries = Object.entries(events)
-    .filter(([, ev]) => ev.date === date && matchFilter(ev, filter))
+    .filter(([, ev]) => ev.date === date)
     .map(([id, ev]) => ({ id, ev, startMin: minutesOf(ev.start) }))
 
   const untimed = entries.filter((e) => e.startMin === null)

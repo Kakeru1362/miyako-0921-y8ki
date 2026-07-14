@@ -5,43 +5,6 @@
   --label-w: 44px;
 }
 
-/* ---- ビュー切替 ---- */
-.filter-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.filter-row .filter-chips {
-  margin-top: 0;
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.view-toggle {
-  flex: 0 0 auto;
-  display: flex;
-  gap: 0;
-  border: 1.5px solid var(--line);
-  border-radius: 999px;
-  overflow: hidden;
-  background: var(--shiro);
-}
-
-.view-btn {
-  font-size: 11px;
-  font-weight: 700;
-  padding: 5px 9px;
-  color: var(--ink-soft);
-  white-space: nowrap;
-}
-
-.view-btn.is-active {
-  background: var(--miyako);
-  color: var(--shiro);
-}
-
 /* ---- 時間未定の予定 ---- */
 .tg-untimed {
   display: flex;

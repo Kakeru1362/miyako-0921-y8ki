@@ -6,16 +6,13 @@ import { addEvent, getMode, initData, removeEvent, updateEvent } from './data.js
 import { initEventDetail, openDetail } from './eventDetail.js'
 import { initEventForm, openSheet } from './eventForm.js'
 import { renderTimeGrid } from './timegrid.js'
-import { renderTimeline } from './timeline.js'
 
-const VIEW_KEY = 'trip-view-mode'
 const initialDate = TRIP_DATES.includes(todayStr()) ? todayStr() : TRIP_DATES[0]
 
 let state = {
   events: {},
   selectedDate: initialDate,
   tab: 'all', // 'all' | 分類id（ごはん・カフェ・アクティビティ）
-  view: localStorage.getItem(VIEW_KEY) === 'list' ? 'list' : 'grid',
 }
 
 function setState(patch) {
@@ -30,40 +27,24 @@ function openEdit(id, event) {
 function render() {
   const isAll = state.tab === 'all'
   document.getElementById('dayTabs').hidden = !isAll
-  document.querySelector('.view-toggle').hidden = !isAll
 
   renderDayTabs()
   renderTabs()
-  renderViewToggle()
 
   const container = document.getElementById('timeline')
-  if (!isAll) {
+  if (isAll) {
+    renderTimeGrid(container, {
+      events: state.events,
+      date: state.selectedDate,
+      onOpen: openDetail,
+      onAddAt: (time) => openSheet({ date: state.selectedDate, prefillStart: time }),
+    })
+  } else {
     renderCategoryList(container, {
       events: state.events,
       category: state.tab,
       onOpen: openDetail,
     })
-  } else if (state.view === 'grid') {
-    renderTimeGrid(container, {
-      events: state.events,
-      date: state.selectedDate,
-      filter: 'all',
-      onOpen: openDetail,
-      onAddAt: (time) => openSheet({ date: state.selectedDate, prefillStart: time }),
-    })
-  } else {
-    renderTimeline(container, {
-      events: state.events,
-      date: state.selectedDate,
-      filter: 'all',
-      onEdit: openEdit,
-    })
-  }
-}
-
-function renderViewToggle() {
-  for (const btn of document.querySelectorAll('.view-btn')) {
-    btn.classList.toggle('is-active', btn.dataset.view === state.view)
   }
 }
 
@@ -175,13 +156,6 @@ function init() {
       prefillCategory: state.tab !== 'all' ? state.tab : '',
     })
   })
-
-  for (const btn of document.querySelectorAll('.view-btn')) {
-    btn.addEventListener('click', () => {
-      localStorage.setItem(VIEW_KEY, btn.dataset.view)
-      setState({ view: btn.dataset.view })
-    })
-  }
 
   initData((events) => setState({ events })).then(() => renderSyncStatus())
 
