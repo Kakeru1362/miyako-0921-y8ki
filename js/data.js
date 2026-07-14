@@ -5,6 +5,7 @@ import { firebaseConfig } from './config.js'
 import { TRIP } from './categories.js'
 
 const CACHE_KEY = `trip-events-${TRIP.id}`
+const MIGRATED_KEY = `trip-migrated-${TRIP.id}`
 const FB_VERSION = '10.12.2'
 
 let mode = 'local'
@@ -32,6 +33,33 @@ function writeCache(events) {
   }
 }
 
+// 同じ予定を指す簡易キー（端末内データをクラウドへ移す際の重複防止に使う）
+function dedupeKey(ev) {
+  return `${ev.date}|${ev.start || ''}|${ev.title}`
+}
+
+// 端末内モードで作った予定を、クラウド接続時に一度だけ引き継ぐ。
+// 複数端末が同じ予定を持っていても二重登録にならないよう、既存分と突き合わせる。
+async function migrateLocalEvents({ eventsRef, get, push, set }) {
+  if (localStorage.getItem(MIGRATED_KEY)) return
+  const local = readCache()
+  const localIds = Object.keys(local)
+  if (localIds.length === 0) {
+    localStorage.setItem(MIGRATED_KEY, '1')
+    return
+  }
+  const snapshot = await get(eventsRef)
+  const remote = snapshot.val() || {}
+  const existing = new Set(Object.values(remote).map(dedupeKey))
+
+  for (const id of localIds) {
+    const event = local[id]
+    if (existing.has(dedupeKey(event))) continue
+    await set(push(eventsRef), event)
+  }
+  localStorage.setItem(MIGRATED_KEY, '1')
+}
+
 async function initFirebase(onChange) {
   const base = `https://www.gstatic.com/firebasejs/${FB_VERSION}`
   const [{ initializeApp }, { getAuth, signInAnonymously }, dbModule] = await Promise.all([
@@ -42,11 +70,18 @@ async function initFirebase(onChange) {
   const app = initializeApp(firebaseConfig)
   await signInAnonymously(getAuth(app))
 
-  const { getDatabase, ref, onValue, push, set, update, remove } = dbModule
+  const { getDatabase, ref, onValue, get, push, set, update, remove } = dbModule
   const db = getDatabase(app)
   const eventsRef = ref(db, `trips/${TRIP.id}/events`)
 
   fb = { eventsRef, ref, db, push, set, update, remove }
+
+  // 移行に失敗しても同期そのものは続行する（次回接続時に再試行される）
+  try {
+    await migrateLocalEvents({ eventsRef, get, push, set })
+  } catch (error) {
+    console.error('端末内データの引き継ぎに失敗:', error)
+  }
 
   onValue(eventsRef, (snapshot) => {
     const events = snapshot.val() || {}
