@@ -21,7 +21,7 @@ export function openDetail(id, event) {
 
   const time = event.start ? (event.end ? `${event.start}–${event.end}` : event.start) : '時間未定'
   elements.time.textContent = `🕐 ${time}`
-  elements.reserved.textContent = event.reserved ? '🎫 予約済み' : '予約なし'
+  elements.reserved.textContent = event.reserved ? '予約済み' : '予約なし'
   elements.reserved.classList.toggle('is-reserved', Boolean(event.reserved))
 
   elements.memo.textContent = event.memo || ''

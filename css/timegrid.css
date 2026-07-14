@@ -145,8 +145,19 @@
   gap: 3px;
 }
 
-.tg-block-badge {
-  font-size: 10px;
+/* 予約済み：ブロック右上に赤字で大きく */
+.tg-reserved {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  font-size: 10.5px;
+  font-weight: 900;
+  color: var(--aka);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--aka);
+  border-radius: 999px;
+  padding: 1px 7px;
+  line-height: 1.5;
 }
 
 .tg-block-title {
@@ -224,11 +235,13 @@
 }
 
 .detail-reserved.is-reserved {
-  color: var(--shiro);
-  background: var(--sango);
+  color: var(--aka);
+  background: var(--shiro);
+  border: 1.5px solid var(--aka);
   border-radius: 999px;
   padding: 3px 10px;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 900;
 }
 
 .detail-sheet .card-memo {

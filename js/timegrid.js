@@ -97,9 +97,9 @@ function buildBlock(block, gridStartMin, onOpen) {
 
   const time = el('span', 'tg-block-time', ev.end ? `${ev.start}–${ev.end}` : ev.start)
   const title = el('span', 'tg-block-title', `${cat.emoji} ${ev.title}`)
-  if (ev.reserved) time.appendChild(el('span', 'tg-block-badge', '🎫'))
   node.appendChild(time)
   node.appendChild(title)
+  if (ev.reserved) node.appendChild(el('span', 'tg-reserved', '予約済み'))
   node.addEventListener('click', (e) => {
     e.stopPropagation()
     onOpen(id, ev)

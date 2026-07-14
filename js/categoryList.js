@@ -21,7 +21,7 @@ function buildRow(id, ev, cat, onOpen) {
   row.appendChild(el('span', 'task-title', ev.title))
 
   const meta = el('span', 'task-meta')
-  if (ev.reserved) meta.appendChild(el('span', 'badge badge-reserved', '🎫'))
+  if (ev.reserved) meta.appendChild(el('span', 'badge badge-reserved', '予約済み'))
   if (ev.mapUrl) meta.appendChild(el('span', 'task-pin', '📍'))
   const time = ev.start ? (ev.end ? `${ev.start}–${ev.end}` : ev.start) : '時間未定'
   meta.appendChild(el('span', 'task-time', time))

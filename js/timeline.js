@@ -47,7 +47,7 @@ function el(tag, className, text) {
 function buildBadges(event) {
   const wrap = el('span', 'card-badges')
   if (event.reserved) {
-    wrap.appendChild(el('span', 'badge badge-reserved', '🎫 予約済'))
+    wrap.appendChild(el('span', 'badge badge-reserved', '予約済み'))
   }
   if (event.mapUrl) {
     wrap.appendChild(el('span', 'badge badge-map', '📍'))
