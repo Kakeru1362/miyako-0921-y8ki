@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/timegrid.css">
 </head>
 <body>
   <div class="app">
@@ -67,7 +68,13 @@
 
     <div class="sticky-head">
       <nav class="day-tabs" id="dayTabs" aria-label="日にちを選ぶ"></nav>
-      <div class="filter-chips" id="filterChips" aria-label="予定を絞り込む"></div>
+      <div class="filter-row">
+        <div class="filter-chips" id="filterChips" aria-label="予定を絞り込む"></div>
+        <div class="view-toggle" role="group" aria-label="表示の切り替え">
+          <button type="button" class="view-btn" data-view="grid">🕐 時間割</button>
+          <button type="button" class="view-btn" data-view="list">📋 リスト</button>
+        </div>
+      </div>
     </div>
 
     <main class="timeline" id="timeline"></main>
@@ -77,6 +84,24 @@
   <button class="fab" id="addBtn" aria-label="予定を追加">＋</button>
 
   <div class="sheet-backdrop" id="sheetBackdrop"></div>
+
+  <div class="sheet detail-sheet" id="detailSheet" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <div class="sheet-handle"></div>
+    <div class="sheet-top">
+      <h2 id="dTitle"></h2>
+      <button type="button" class="sheet-close" id="dClose">とじる</button>
+    </div>
+    <p class="detail-meta">
+      <span class="detail-cat" id="dCat"></span>
+      <span class="detail-time" id="dTime"></span>
+      <span class="detail-reserved" id="dReserved"></span>
+    </p>
+    <p class="card-memo" id="dMemo" hidden></p>
+    <div class="card-actions">
+      <a class="btn-map" id="dMap" target="_blank" rel="noopener noreferrer" hidden>📍 マップを開く</a>
+      <button type="button" class="btn-edit" id="dEdit">✏️ 編集</button>
+    </div>
+  </div>
 
   <div class="sheet" id="eventSheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
     <div class="sheet-handle"></div>

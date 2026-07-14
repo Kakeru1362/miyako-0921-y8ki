@@ -87,7 +87,7 @@ function validate(data) {
   return null
 }
 
-export function openSheet({ date, event = null, id = null }) {
+export function openSheet({ date, event = null, id = null, prefillStart = '' }) {
   editingId = id
   setError('')
   elements.form.reset()
@@ -95,7 +95,7 @@ export function openSheet({ date, event = null, id = null }) {
   elements.sheetTitle.textContent = event ? '予定を編集' : '予定を追加'
   elements.title.value = event ? event.title : ''
   elements.date.value = event ? event.date : date
-  elements.start.value = event ? event.start || '' : ''
+  elements.start.value = event ? event.start || '' : prefillStart
   elements.end.value = event ? event.end || '' : ''
   setSelectedCategory(event ? event.category : 'activity')
   elements.reservedYes.checked = Boolean(event && event.reserved)

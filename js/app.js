@@ -2,15 +2,19 @@
 
 import { CATEGORIES, TRIP_DATES, todayStr, tripStatus, weekdayJa } from './categories.js'
 import { addEvent, getMode, initData, removeEvent, updateEvent } from './data.js'
+import { initEventDetail, openDetail } from './eventDetail.js'
 import { initEventForm, openSheet } from './eventForm.js'
+import { renderTimeGrid } from './timegrid.js'
 import { renderTimeline } from './timeline.js'
 
+const VIEW_KEY = 'trip-view-mode'
 const initialDate = TRIP_DATES.includes(todayStr()) ? todayStr() : TRIP_DATES[0]
 
 let state = {
   events: {},
   selectedDate: initialDate,
   filter: 'all',
+  view: localStorage.getItem(VIEW_KEY) === 'list' ? 'list' : 'grid',
 }
 
 function setState(patch) {
@@ -18,15 +22,37 @@ function setState(patch) {
   render()
 }
 
+function openEdit(id, event) {
+  openSheet({ date: state.selectedDate, event, id })
+}
+
 function render() {
   renderDayTabs()
   renderFilters()
-  renderTimeline(document.getElementById('timeline'), {
-    events: state.events,
-    date: state.selectedDate,
-    filter: state.filter,
-    onEdit: (id, event) => openSheet({ date: state.selectedDate, event, id }),
-  })
+  renderViewToggle()
+  const container = document.getElementById('timeline')
+  if (state.view === 'grid') {
+    renderTimeGrid(container, {
+      events: state.events,
+      date: state.selectedDate,
+      filter: state.filter,
+      onOpen: openDetail,
+      onAddAt: (time) => openSheet({ date: state.selectedDate, prefillStart: time }),
+    })
+  } else {
+    renderTimeline(container, {
+      events: state.events,
+      date: state.selectedDate,
+      filter: state.filter,
+      onEdit: openEdit,
+    })
+  }
+}
+
+function renderViewToggle() {
+  for (const btn of document.querySelectorAll('.view-btn')) {
+    btn.classList.toggle('is-active', btn.dataset.view === state.view)
+  }
 }
 
 function renderDayTabs() {
@@ -127,10 +153,18 @@ async function handleDelete(id) {
 function init() {
   renderHeader()
   initEventForm({ onSubmit: handleSubmit, onDelete: handleDelete })
+  initEventDetail({ onEdit: openEdit })
 
   document.getElementById('addBtn').addEventListener('click', () => {
     openSheet({ date: state.selectedDate })
   })
+
+  for (const btn of document.querySelectorAll('.view-btn')) {
+    btn.addEventListener('click', () => {
+      localStorage.setItem(VIEW_KEY, btn.dataset.view)
+      setState({ view: btn.dataset.view })
+    })
+  }
 
   initData((events) => setState({ events })).then(() => renderSyncStatus())
 
