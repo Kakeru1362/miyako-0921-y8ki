@@ -1,0 +1,661 @@
+/* ヘッダー（宮古ブルーの海）・日タブ・フィルタ・カード・シート・FAB */
+
+/* ---- ヒーロー：宮古ブルーのラグーンとウミガメ ---- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(20px + env(safe-area-inset-top)) 20px 44px;
+  background: linear-gradient(168deg, var(--lagoon-1) 0%, var(--lagoon-2) 42%, var(--lagoon-3) 78%, var(--lagoon-4) 100%);
+  color: var(--shiro);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-num);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  opacity: 0.85;
+}
+
+.hero h1 {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+  text-shadow: 0 1px 0 rgba(10, 95, 131, 0.3);
+}
+
+.hero-dates {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.trip-status {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--miyako-deep);
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+}
+
+.turtle-hero {
+  position: absolute;
+  right: 8px;
+  top: 14px;
+  width: 132px;
+  height: auto;
+  animation: swim 5.5s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(8, 66, 90, 0.25));
+}
+
+@keyframes swim {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-9px) rotate(3deg); }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  animation: rise 6s ease-in infinite;
+}
+
+.bubble:nth-child(1) { width: 8px; height: 8px; right: 40px; bottom: 30px; animation-delay: 0s; }
+.bubble:nth-child(2) { width: 5px; height: 5px; right: 120px; bottom: 20px; animation-delay: 2s; }
+.bubble:nth-child(3) { width: 11px; height: 11px; right: 76px; bottom: 12px; animation-delay: 4s; }
+
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 0.9; }
+  100% { transform: translateY(-90px); opacity: 0; }
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 22px;
+  display: block;
+}
+
+/* ---- スティッキーヘッド：日タブ + フィルタ ---- */
+.sticky-head {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--suna);
+  padding: 10px 12px 8px;
+  box-shadow: 0 6px 12px -10px rgba(29, 78, 95, 0.35);
+}
+
+.day-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.day-tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 7px 2px 6px;
+  border-radius: 14px;
+  background: var(--shiro);
+  border: 2px solid var(--line);
+  transition: background 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.day-tab:active {
+  transform: scale(0.96);
+}
+
+.day-no {
+  font-family: var(--font-num);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.day-date {
+  font-family: var(--font-num);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.day-w {
+  font-size: 10px;
+  color: var(--ink-soft);
+}
+
+.day-tab.is-active {
+  background: var(--miyako);
+  border-color: var(--miyako);
+  color: var(--shiro);
+}
+
+.day-tab.is-active .day-no,
+.day-tab.is-active .day-w {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.day-tab.is-today:not(.is-active) {
+  border-color: var(--sango);
+}
+
+.day-count {
+  position: absolute;
+  top: -6px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--sango);
+  color: var(--shiro);
+  font-family: var(--font-num);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 18px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.filter-chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  margin-top: 8px;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.filter-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-chip {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--shiro);
+  border: 1.5px solid var(--line);
+  color: var(--ink-soft);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.filter-chip.is-active {
+  background: var(--cat, var(--miyako));
+  border-color: var(--cat, var(--miyako));
+  color: var(--shiro);
+}
+
+/* ---- タイムライン ---- */
+.timeline {
+  padding: 14px 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  background: var(--shiro);
+  border-radius: var(--radius);
+  border-left: 5px solid var(--cat);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.card-time {
+  flex: 0 0 auto;
+  font-family: var(--font-num);
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--cat);
+  background: var(--cat-tint);
+  border-radius: 9px;
+  padding: 2px 8px;
+  min-width: 56px;
+  text-align: center;
+}
+
+.card-time small {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.card-time.is-tbd {
+  font-size: 12px;
+}
+
+.card-title {
+  flex: 1 1 auto;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.card-emoji {
+  margin-right: 4px;
+  font-size: 14px;
+}
+
+.card-badges {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+.badge-reserved {
+  background: var(--sango);
+  color: var(--shiro);
+}
+
+.badge-map {
+  padding: 2px 2px;
+  font-size: 13px;
+}
+
+/* 展開部：grid-rows トリックでなめらかに開閉 */
+.card-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.card.is-open .card-body {
+  grid-template-rows: 1fr;
+}
+
+.card-body-inner {
+  overflow: hidden;
+  padding: 0 12px;
+}
+
+.card.is-open .card-body-inner {
+  padding-bottom: 12px;
+}
+
+.card-meta {
+  font-size: 12px;
+  color: var(--ink-soft);
+  border-top: 1.5px dashed var(--line);
+  padding-top: 8px;
+}
+
+.card-memo {
+  font-size: 13.5px;
+  margin-top: 6px;
+  background: var(--suna);
+  border-radius: 10px;
+  padding: 8px 10px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-map,
+.btn-edit {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 10px;
+  border-radius: 12px;
+}
+
+.btn-map {
+  background: var(--miyako);
+  color: var(--shiro);
+}
+
+.btn-edit {
+  background: var(--suna);
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+}
+
+/* ---- いまここライン ---- */
+.now-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 0;
+}
+
+.now-line::before,
+.now-line::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sango);
+  opacity: 0.7;
+}
+
+.now-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--sango-deep);
+}
+
+/* ---- 空の状態 ---- */
+.empty-state {
+  text-align: center;
+  padding: 44px 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  white-space: pre-line;
+}
+
+.turtle-mini {
+  width: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  animation: swim 5.5s ease-in-out infinite;
+}
+
+/* ---- FAB ---- */
+.fab {
+  position: fixed;
+  right: max(16px, calc(50% - 240px + 16px));
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--sango) 20%, var(--sango-deep));
+  color: var(--shiro);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 6px 16px rgba(224, 90, 56, 0.4);
+  z-index: 30;
+  transition: transform 0.12s;
+}
+
+.fab:active {
+  transform: scale(0.92);
+}
+
+/* ---- 同期ステータス ---- */
+.sync-status {
+  position: fixed;
+  left: max(14px, calc(50% - 240px + 14px));
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  z-index: 25;
+}
+
+.sync-status.is-cloud {
+  color: var(--miyako-deep);
+  border-color: var(--lagoon-3);
+}
+
+/* ---- ボトムシート ---- */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 60, 76, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 40;
+}
+
+.sheet-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sheet {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 105%);
+  width: min(100%, 480px);
+  max-height: 88dvh;
+  overflow-y: auto;
+  background: var(--suna);
+  border-radius: 24px 24px 0 0;
+  padding: 10px 18px calc(24px + env(safe-area-inset-bottom));
+  box-shadow: 0 -8px 30px rgba(13, 60, 76, 0.25);
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0.25, 1);
+  z-index: 50;
+}
+
+.sheet.is-open {
+  transform: translate(-50%, 0);
+}
+
+.sheet-handle {
+  width: 44px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--line);
+  margin: 0 auto 12px;
+}
+
+.sheet-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.sheet-top h2 {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.sheet-close {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  padding: 6px 10px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.field-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.field-label .req {
+  color: var(--sango-deep);
+  font-size: 11px;
+  margin-left: 4px;
+}
+
+.field input[type='text'],
+.field input[type='url'],
+.field input[type='time'],
+.field select,
+.field textarea {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--shiro);
+  padding: 10px 12px;
+  font-weight: 500;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--miyako);
+}
+
+.field-hint {
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.cat-chip {
+  position: relative;
+}
+
+.cat-chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cat-chip span {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: var(--shiro);
+  border: 2px solid var(--line);
+  color: var(--ink-soft);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.cat-chip input:checked + span {
+  background: var(--cat);
+  border-color: var(--cat);
+  color: var(--shiro);
+}
+
+.cat-chip input:focus-visible + span {
+  outline: 3px solid var(--miyako);
+  outline-offset: 2px;
+}
+
+.segment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--shiro);
+}
+
+.segment label {
+  position: relative;
+}
+
+.segment input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.segment span {
+  display: block;
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 4px;
+  color: var(--ink-soft);
+}
+
+.segment input:checked + span {
+  background: var(--sango);
+  color: var(--shiro);
+}
+
+.segment label:first-child input:checked + span {
+  background: var(--ink-soft);
+}
+
+.form-error {
+  background: #fdecec;
+  color: #c0392b;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 9px 12px;
+  margin-bottom: 12px;
+}
+
+.btn-save {
+  width: 100%;
+  background: linear-gradient(160deg, var(--miyako) 20%, var(--miyako-deep));
+  color: var(--shiro);
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(15, 163, 184, 0.35);
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+}
+
+.btn-delete {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0392b;
+  padding: 10px;
+}

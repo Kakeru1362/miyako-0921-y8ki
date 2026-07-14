@@ -1,0 +1,89 @@
+/* パレット・フォント・土台。宮古ブルーの海と白砂がベース */
+
+:root {
+  --ink: #1d4e5f;
+  --ink-soft: #5f7d8a;
+  --suna: #fdf9f2;
+  --shiro: #ffffff;
+  --line: #ece3d3;
+  --miyako: #0fa3b8;
+  --miyako-deep: #0a6e8e;
+  --lagoon-1: #0a5f83;
+  --lagoon-2: #0fa3b8;
+  --lagoon-3: #4fd3d0;
+  --lagoon-4: #b8f0e2;
+  --sango: #f4714f;
+  --sango-deep: #e05a38;
+  --shadow: 0 2px 10px rgba(29, 78, 95, 0.08);
+  --radius: 16px;
+  --font-round: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  --font-num: 'M PLUS Rounded 1c', 'Zen Maru Gothic', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-round);
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--suna);
+  min-height: 100dvh;
+  line-height: 1.6;
+}
+
+body.sheet-open {
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 16px; /* iOSのフォーカス時ズームを防ぐ */
+  color: var(--ink);
+}
+
+a {
+  color: var(--miyako-deep);
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--miyako);
+  outline-offset: 2px;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
