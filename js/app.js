@@ -5,6 +5,7 @@ import { renderCategoryList } from './categoryList.js'
 import { addEvent, getMode, initData, removeEvent, updateEvent } from './data.js'
 import { initEventDetail, openDetail } from './eventDetail.js'
 import { initEventForm, openSheet } from './eventForm.js'
+import { ensureSeen, loadSeen, markDateSeen, unseenCount, unseenIdsOn } from './seen.js'
 import { renderTimeGrid } from './timegrid.js'
 
 const initialDate = TRIP_DATES.includes(todayStr()) ? todayStr() : TRIP_DATES[0]
@@ -13,6 +14,7 @@ let state = {
   events: {},
   selectedDate: initialDate,
   tab: 'all', // 'all' | 分類id（ごはん・カフェ・アクティビティ）
+  seen: loadSeen(), // 既読の予定 {id: 更新時刻}
 }
 
 function setState(patch) {
@@ -28,6 +30,12 @@ function render() {
   const isAll = state.tab === 'all'
   document.getElementById('dayTabs').hidden = !isAll
 
+  // 表示する日の「新着」を先に控えてから既読にする
+  // （バッジは消えるが、その日の新しい予定には NEW マークが残る）
+  const seen = ensureSeen(state.events, state.seen)
+  const unseenIds = isAll ? unseenIdsOn(state.events, state.selectedDate, seen) : new Set()
+  state.seen = isAll ? markDateSeen(state.events, state.selectedDate, seen) : seen
+
   renderDayTabs()
   renderTabs()
 
@@ -37,6 +45,7 @@ function render() {
       events: state.events,
       date: state.selectedDate,
       filter: 'all', // 旧キャッシュの timegrid.js との混在に備えて渡し続ける
+      unseenIds,
       onOpen: openDetail,
       onAddAt: (time) => openSheet({ date: state.selectedDate, prefillStart: time }),
     })
@@ -72,11 +81,12 @@ function renderDayTabs() {
     dayW.className = 'day-w'
     dayW.textContent = weekdayJa(date)
 
-    const count = Object.values(state.events).filter((ev) => ev.date === date).length
-    if (count > 0) {
+    // 赤バッジ＝まだ見ていない新規・更新された予定の件数（その日を開くと消える）
+    const unseen = unseenCount(state.events, date, state.seen)
+    if (unseen > 0) {
       const dot = document.createElement('span')
       dot.className = 'day-count'
-      dot.textContent = String(count)
+      dot.textContent = String(unseen)
       tab.appendChild(dot)
     }
 

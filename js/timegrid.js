@@ -60,7 +60,7 @@ function layoutBlocks(timed) {
   return placed
 }
 
-function buildUntimedRow(untimed, onOpen) {
+function buildUntimedRow(untimed, onOpen, isNew) {
   const row = el('div', 'tg-untimed')
   row.appendChild(el('span', 'tg-untimed-label', '時間未定'))
   for (const { id, ev } of untimed) {
@@ -69,14 +69,18 @@ function buildUntimedRow(untimed, onOpen) {
     chip.type = 'button'
     chip.style.setProperty('--cat', cat.color)
     chip.style.setProperty('--cat-tint', cat.tint)
-    chip.textContent = `${cat.emoji} ${ev.title}${ev.reserved ? ' 🎫' : ''}`
+    if (isNew(id)) {
+      chip.classList.add('is-new')
+      chip.appendChild(el('span', 'tg-new', 'NEW'))
+    }
+    chip.appendChild(document.createTextNode(`${cat.emoji} ${ev.title}${ev.reserved ? ' 🎫' : ''}`))
     chip.addEventListener('click', () => onOpen(id, ev))
     row.appendChild(chip)
   }
   return row
 }
 
-function buildBlock(block, gridStartMin, onOpen) {
+function buildBlock(block, gridStartMin, onOpen, isNew) {
   const { id, ev, startMin, endMin, col, cols } = block
   const cat = CATEGORY_MAP[ev.category] || CATEGORY_MAP.other
   const node = el('button', 'tg-block')
@@ -90,6 +94,10 @@ function buildBlock(block, gridStartMin, onOpen) {
   if (!ev.end) node.classList.add('is-open-ended')
 
   const time = el('span', 'tg-block-time', ev.end ? `${ev.start}–${ev.end}` : ev.start)
+  if (isNew) {
+    node.classList.add('is-new')
+    time.insertBefore(el('span', 'tg-new', 'NEW'), time.firstChild)
+  }
   const title = el('span', 'tg-block-title', `${cat.emoji} ${ev.title}`)
   node.appendChild(time)
   node.appendChild(title)
@@ -101,8 +109,10 @@ function buildBlock(block, gridStartMin, onOpen) {
   return node
 }
 
-// events: {id: event}。onOpen(id, ev)=詳細表示、onAddAt(time)=空き時間タップで追加
-export function renderTimeGrid(container, { events, date, onOpen, onAddAt }) {
+// events: {id: event}。unseenIds=この日の新着（NEWマークを付ける）
+// onOpen(id, ev)=詳細表示、onAddAt(time)=空き時間タップで追加
+export function renderTimeGrid(container, { events, date, unseenIds, onOpen, onAddAt }) {
+  const isNew = (id) => Boolean(unseenIds && unseenIds.has(id))
   const entries = Object.entries(events)
     .filter(([, ev]) => ev.date === date)
     .map(([id, ev]) => ({ id, ev, startMin: minutesOf(ev.start) }))
@@ -121,7 +131,7 @@ export function renderTimeGrid(container, { events, date, onOpen, onAddAt }) {
   const gridStartMin = startHour * 60
 
   const frag = document.createDocumentFragment()
-  if (untimed.length > 0) frag.appendChild(buildUntimedRow(untimed, onOpen))
+  if (untimed.length > 0) frag.appendChild(buildUntimedRow(untimed, onOpen, isNew))
 
   const grid = el('div', 'tg-grid')
   grid.style.height = `${(endHour - startHour) * HOUR_H}px`
@@ -142,7 +152,7 @@ export function renderTimeGrid(container, { events, date, onOpen, onAddAt }) {
   }
 
   for (const block of layoutBlocks(timed)) {
-    grid.appendChild(buildBlock(block, gridStartMin, onOpen))
+    grid.appendChild(buildBlock(block, gridStartMin, onOpen, isNew(block.id)))
   }
 
   if (date === todayStr()) {

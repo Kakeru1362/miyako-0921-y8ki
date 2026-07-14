@@ -108,6 +108,31 @@
   gap: 3px;
 }
 
+/* NEW：まだ見ていない新規・更新された予定 */
+.tg-new {
+  flex: 0 0 auto;
+  font-family: var(--font-num);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--shiro);
+  background: var(--aka);
+  border-radius: 999px;
+  padding: 0 5px;
+  line-height: 1.6;
+}
+
+.tg-block.is-new {
+  box-shadow: 0 0 0 2px var(--aka), 0 1px 4px rgba(29, 78, 95, 0.12);
+}
+
+.tg-untimed-chip.is-new {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 0 0 2px var(--aka);
+}
+
 /* 予約済み：ブロック右上に赤字で大きく */
 .tg-reserved {
   position: absolute;
