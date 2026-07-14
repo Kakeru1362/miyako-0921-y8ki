@@ -36,6 +36,7 @@ function render() {
     renderTimeGrid(container, {
       events: state.events,
       date: state.selectedDate,
+      filter: 'all', // 旧キャッシュの timegrid.js との混在に備えて渡し続ける
       onOpen: openDetail,
       onAddAt: (time) => openSheet({ date: state.selectedDate, prefillStart: time }),
     })
