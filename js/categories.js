@@ -9,12 +9,16 @@ export const TRIP = {
 }
 
 export const CATEGORIES = [
-  { id: 'meal', label: 'ご飯', emoji: '🍽️', color: '#f4714f', tint: '#feefe9' },
+  { id: 'meal', label: 'ごはん', emoji: '🍽️', color: '#f4714f', tint: '#feefe9' },
+  { id: 'cafe', label: 'カフェ', emoji: '☕', color: '#a97c50', tint: '#f6efe7' },
   { id: 'activity', label: 'アクティビティ', emoji: '🤿', color: '#0fa3b8', tint: '#e3f6f8' },
   { id: 'move', label: '移動', emoji: '🚗', color: '#7b93ac', tint: '#eef2f6' },
   { id: 'stay', label: '宿・休憩', emoji: '🏝️', color: '#9c86d8', tint: '#f2eefa' },
   { id: 'other', label: 'その他', emoji: '🌺', color: '#dd9a2e', tint: '#fbf3e2' },
 ]
+
+// 上部タブに出す分類（登録フォームでは全分類が選べる）
+export const TAB_CATEGORY_IDS = ['meal', 'cafe', 'activity']
 
 export const CATEGORY_MAP = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]))
 

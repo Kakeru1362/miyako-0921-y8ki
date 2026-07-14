@@ -87,7 +87,7 @@ function validate(data) {
   return null
 }
 
-export function openSheet({ date, event = null, id = null, prefillStart = '' }) {
+export function openSheet({ date, event = null, id = null, prefillStart = '', prefillCategory = '' }) {
   editingId = id
   setError('')
   elements.form.reset()
@@ -97,7 +97,7 @@ export function openSheet({ date, event = null, id = null, prefillStart = '' }) 
   elements.date.value = event ? event.date : date
   elements.start.value = event ? event.start || '' : prefillStart
   elements.end.value = event ? event.end || '' : ''
-  setSelectedCategory(event ? event.category : 'activity')
+  setSelectedCategory(event ? event.category : prefillCategory || 'activity')
   elements.reservedYes.checked = Boolean(event && event.reserved)
   elements.reservedNo.checked = !(event && event.reserved)
   elements.mapUrl.value = event ? event.mapUrl || '' : ''

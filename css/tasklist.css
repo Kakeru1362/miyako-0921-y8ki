@@ -1,0 +1,98 @@
+/* カテゴリタブのタスクリスト表示 */
+
+.tasklist-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 0 2px;
+}
+
+.tasklist-head-label {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.tasklist-head-count {
+  font-family: var(--font-num);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.tasklist-group {
+  margin-bottom: 16px;
+}
+
+.tasklist-day {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  padding-left: 2px;
+}
+
+.tasklist-card {
+  background: var(--shiro);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1.5px dashed var(--line);
+}
+
+.task-row:last-child {
+  border-bottom: none;
+}
+
+.task-row:active {
+  background: var(--cat-tint);
+}
+
+.task-dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cat);
+}
+
+.task-title {
+  flex: 1 1 auto;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.task-meta {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.task-time {
+  font-family: var(--font-num);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.task-pin {
+  font-size: 12px;
+}
+
+.empty-emoji {
+  font-size: 44px;
+  display: block;
+  margin-bottom: 8px;
+}

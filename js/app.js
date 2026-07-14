@@ -1,6 +1,7 @@
 // 初期化・状態管理・日タブとフィルタの制御
 
-import { CATEGORIES, TRIP_DATES, todayStr, tripStatus, weekdayJa } from './categories.js'
+import { CATEGORY_MAP, TAB_CATEGORY_IDS, TRIP_DATES, todayStr, tripStatus, weekdayJa } from './categories.js'
+import { renderCategoryList } from './categoryList.js'
 import { addEvent, getMode, initData, removeEvent, updateEvent } from './data.js'
 import { initEventDetail, openDetail } from './eventDetail.js'
 import { initEventForm, openSheet } from './eventForm.js'
@@ -13,7 +14,7 @@ const initialDate = TRIP_DATES.includes(todayStr()) ? todayStr() : TRIP_DATES[0]
 let state = {
   events: {},
   selectedDate: initialDate,
-  filter: 'all',
+  tab: 'all', // 'all' | 分類id（ごはん・カフェ・アクティビティ）
   view: localStorage.getItem(VIEW_KEY) === 'list' ? 'list' : 'grid',
 }
 
@@ -27,15 +28,26 @@ function openEdit(id, event) {
 }
 
 function render() {
+  const isAll = state.tab === 'all'
+  document.getElementById('dayTabs').hidden = !isAll
+  document.querySelector('.view-toggle').hidden = !isAll
+
   renderDayTabs()
-  renderFilters()
+  renderTabs()
   renderViewToggle()
+
   const container = document.getElementById('timeline')
-  if (state.view === 'grid') {
+  if (!isAll) {
+    renderCategoryList(container, {
+      events: state.events,
+      category: state.tab,
+      onOpen: openDetail,
+    })
+  } else if (state.view === 'grid') {
     renderTimeGrid(container, {
       events: state.events,
       date: state.selectedDate,
-      filter: state.filter,
+      filter: 'all',
       onOpen: openDetail,
       onAddAt: (time) => openSheet({ date: state.selectedDate, prefillStart: time }),
     })
@@ -43,7 +55,7 @@ function render() {
     renderTimeline(container, {
       events: state.events,
       date: state.selectedDate,
-      filter: state.filter,
+      filter: 'all',
       onEdit: openEdit,
     })
   }
@@ -95,28 +107,30 @@ function renderDayTabs() {
   nav.replaceChildren(frag)
 }
 
-const FILTERS = [
-  { id: 'all', label: 'ぜんぶ' },
-  ...CATEGORIES.map((c) => ({ id: c.id, label: `${c.emoji} ${c.label}`, color: c.color, tint: c.tint })),
-  { id: 'reserved', label: '🎫 予約あり' },
+const TABS = [
+  { id: 'all', label: 'すべて' },
+  ...TAB_CATEGORY_IDS.map((id) => {
+    const c = CATEGORY_MAP[id]
+    return { id: c.id, label: `${c.emoji} ${c.label}`, color: c.color, tint: c.tint }
+  }),
 ]
 
-function renderFilters() {
+function renderTabs() {
   const wrap = document.getElementById('filterChips')
   const frag = document.createDocumentFragment()
-  for (const f of FILTERS) {
+  for (const tab of TABS) {
     const chip = document.createElement('button')
     chip.type = 'button'
     chip.className = 'filter-chip'
-    chip.textContent = f.label
-    if (f.color) {
-      chip.style.setProperty('--cat', f.color)
-      chip.style.setProperty('--cat-tint', f.tint)
+    chip.textContent = tab.label
+    if (tab.id !== 'all') {
+      chip.style.setProperty('--cat', tab.color)
+      chip.style.setProperty('--cat-tint', tab.tint)
+      const count = Object.values(state.events).filter((ev) => ev.category === tab.id).length
+      if (count > 0) chip.appendChild(document.createTextNode(`・${count}`))
     }
-    if (state.filter === f.id) chip.classList.add('is-active')
-    chip.addEventListener('click', () => {
-      setState({ filter: state.filter === f.id ? 'all' : f.id })
-    })
+    if (state.tab === tab.id) chip.classList.add('is-active')
+    chip.addEventListener('click', () => setState({ tab: tab.id }))
     frag.appendChild(chip)
   }
   wrap.replaceChildren(frag)
@@ -156,7 +170,10 @@ function init() {
   initEventDetail({ onEdit: openEdit })
 
   document.getElementById('addBtn').addEventListener('click', () => {
-    openSheet({ date: state.selectedDate })
+    openSheet({
+      date: state.selectedDate,
+      prefillCategory: state.tab !== 'all' ? state.tab : '',
+    })
   })
 
   for (const btn of document.querySelectorAll('.view-btn')) {

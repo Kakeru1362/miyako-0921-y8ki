@@ -459,6 +459,7 @@
   width: min(100%, 480px);
   max-height: 88dvh;
   overflow-y: auto;
+  overflow-x: hidden;
   background: var(--suna);
   border-radius: 24px 24px 0 0;
   padding: 10px 18px calc(24px + env(safe-area-inset-bottom));
@@ -544,8 +545,25 @@
 
 .field-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* minmax(0,1fr): 時間入力の固有幅で列がはみ出さないようにする */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
+}
+
+.field-row > label {
+  min-width: 0;
+}
+
+.field input[type='time'] {
+  appearance: none;
+  -webkit-appearance: none;
+  min-width: 0;
+  min-height: 46px;
+  text-align: left;
+}
+
+.field input[type='time']::-webkit-date-and-time-value {
+  text-align: left;
 }
 
 .cat-chips {

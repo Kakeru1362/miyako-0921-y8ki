@@ -26,8 +26,20 @@
   box-sizing: border-box;
 }
 
+/* display 指定のある要素でも hidden 属性を必ず効かせる */
+[hidden] {
+  display: none !important;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
+}
+
+/* 横方向のはみ出しでページが左右に揺れるのを防ぐ
+   （clip はスクロールコンテナを作らないので sticky を壊さない） */
+html,
+body {
+  overflow-x: clip;
 }
 
 body {
