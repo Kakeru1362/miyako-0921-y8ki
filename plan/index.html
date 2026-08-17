@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#E9EBE5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C151B" media="(prefers-color-scheme: dark)">
+<meta name="description" content="宮古島4泊5日（2026/9/21-25）の旅程シート">
+<title>宮古島 旅程シート 2026.9.21–25</title>
+<style>
+  :root{
+    --bg:#E9EBE5; --surface:#F6F7F2; --surface-2:#EFF1EA;
+    --ink:#13202A; --ink-2:#4C5C67; --ink-3:#78868E;
+    --rule:#C8CEC5; --rule-soft:#D9DED5;
+    --sea:#0B4F6C; --sea-soft:#DCE8ED;
+    --sand:#8A6A28; --sand-soft:#EBE3CE;
+    --fix:#A83A32; --fix-soft:#F0DED9;
+    --warn:#8A5A00; --warn-soft:#F2E7CC;
+    --shadow:0 1px 2px rgba(19,32,42,.06), 0 8px 24px -12px rgba(19,32,42,.18);
+    --maxw:44rem;
+    --d1:#0B6E8C; --d2:#B85C33; --d3:#3F7340; --d4:#71487F;
+    --land:#DCE0D6; --land-line:#B4BCB0; --water:#E2E9EA;
+    --font-jp:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,system-ui,sans-serif;
+    --font-mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C151B; --surface:#131F27; --surface-2:#18262F;
+      --ink:#E4E9E5; --ink-2:#94A4AD; --ink-3:#6E7F88;
+      --rule:#25343D; --rule-soft:#1E2B33;
+      --sea:#74C6DE; --sea-soft:#132E3A;
+      --sand:#D9BE83; --sand-soft:#2A2416;
+      --fix:#E8776B; --fix-soft:#33191A;
+      --warn:#E0B15C; --warn-soft:#2C2413;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+      --d1:#6BC3DC; --d2:#E9976A; --d3:#96C77C; --d4:#C398D8;
+      --land:#1E2C34; --land-line:#33454F; --water:#101C23;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C151B; --surface:#131F27; --surface-2:#18262F;
+    --ink:#E4E9E5; --ink-2:#94A4AD; --ink-3:#6E7F88;
+    --rule:#25343D; --rule-soft:#1E2B33;
+    --sea:#74C6DE; --sea-soft:#132E3A;
+    --sand:#D9BE83; --sand-soft:#2A2416;
+    --fix:#E8776B; --fix-soft:#33191A;
+    --warn:#E0B15C; --warn-soft:#2C2413;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+    --d1:#6BC3DC; --d2:#E9976A; --d3:#96C77C; --d4:#C398D8;
+    --land:#1E2C34; --land-line:#33454F; --water:#101C23;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:4.5rem;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} *{animation:none!important;transition:none!important;}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-jp);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.15rem 5rem;}
+
+  .mast{padding:2.75rem 0 1.5rem;border-bottom:1px solid var(--rule);}
+  .mast .eyebrow{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase;margin:0 0 .7rem;}
+  .mast h1{font-size:clamp(1.65rem,7vw,2.3rem);line-height:1.25;margin:0;letter-spacing:.01em;text-wrap:balance;font-weight:700;}
+  .mast .dates{font-family:var(--font-mono);font-size:1rem;color:var(--sea);margin:.55rem 0 0;letter-spacing:.02em;font-variant-numeric:tabular-nums;}
+  .mast .sub{color:var(--ink-2);font-size:.9rem;margin:.9rem 0 0;}
+
+  .route{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin:1.5rem 0 0;}
+  .route a{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--rule-soft);border-top:2px solid var(--sea);border-radius:2px;padding:.55rem .45rem .6rem;transition:background .15s ease,border-color .15s ease;}
+  .route a:hover,.route a:focus-visible{background:var(--sea-soft);border-color:var(--sea);}
+  .route .n{font-family:var(--font-mono);font-size:.68rem;color:var(--ink-3);letter-spacing:.08em;}
+  .route .a{display:block;font-size:.74rem;line-height:1.4;margin-top:.15rem;color:var(--ink);font-weight:600;}
+  .route a:last-child{border-top-color:var(--rule);}
+
+  .mapfig{margin:1.6rem 0 0;padding:0;}
+  .mapfig input{position:absolute;opacity:0;pointer-events:none;width:0;height:0;}
+  .map-tabs{display:flex;flex-wrap:wrap;gap:.3rem;margin:0 0 .6rem;}
+  .map-tabs label{cursor:pointer;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.05em;padding:.28rem .6rem;border:1px solid var(--rule);border-radius:2px;color:var(--ink-2);background:var(--surface);user-select:none;display:inline-flex;align-items:center;gap:.35rem;}
+  .map-tabs label i{width:.5rem;height:.5rem;border-radius:1px;background:currentColor;font-style:normal;}
+  .map-tabs label[for="mf-1"] i{background:var(--d1);}
+  .map-tabs label[for="mf-2"] i{background:var(--d2);}
+  .map-tabs label[for="mf-3"] i{background:var(--d3);}
+  .map-tabs label[for="mf-4"] i{background:var(--d4);}
+  .map-tabs label[for="mf-all"] i{display:none;}
+  #mf-all:checked ~ .map-tabs label[for="mf-all"],
+  #mf-1:checked ~ .map-tabs label[for="mf-1"],
+  #mf-2:checked ~ .map-tabs label[for="mf-2"],
+  #mf-3:checked ~ .map-tabs label[for="mf-3"],
+  #mf-4:checked ~ .map-tabs label[for="mf-4"]{color:var(--ink);border-color:var(--ink);background:var(--surface-2);font-weight:600;}
+  #mf-all:focus-visible ~ .map-tabs label[for="mf-all"],
+  #mf-1:focus-visible ~ .map-tabs label[for="mf-1"],
+  #mf-2:focus-visible ~ .map-tabs label[for="mf-2"],
+  #mf-3:focus-visible ~ .map-tabs label[for="mf-3"],
+  #mf-4:focus-visible ~ .map-tabs label[for="mf-4"]{outline:2px solid var(--sea);outline-offset:2px;}
+  .mapfig svg.island{display:block;width:100%;height:auto;max-width:100%;background:var(--water);border:1px solid var(--rule);border-radius:3px;}
+  .island .land{fill:var(--land);stroke:var(--land-line);stroke-width:1.5;}
+  .island .bridge{stroke:var(--ink-3);stroke-width:2.5;stroke-linecap:round;}
+  .island .isle-label{fill:var(--ink-3);font-size:11px;letter-spacing:.08em;}
+  .island .zone{fill:none;stroke-width:1.5;stroke-dasharray:5 4;opacity:0;transition:opacity .2s ease;}
+  .island .pin circle{stroke:var(--water);stroke-width:1.5;}
+  .island .pin text{font-size:11.5px;fill:var(--ink);}
+  .island .pin .mins{font-size:10px;fill:var(--ink-3);letter-spacing:.02em;}
+  .island .pin{transition:opacity .2s ease;}
+  .island .pin[data-day="1"] circle{fill:var(--d1);}
+  .island .pin[data-day="2"] circle{fill:var(--d2);}
+  .island .pin[data-day="3"] circle{fill:var(--d3);}
+  .island .pin[data-day="4"] circle{fill:var(--d4);}
+  .island .pin[data-day="x"] circle{fill:var(--ink-3);}
+  .island .base circle{fill:var(--fix);}
+  .island .base text{font-weight:700;fill:var(--ink);}
+  .island .base .ring{fill:none;stroke:var(--fix);stroke-width:1.2;opacity:.55;}
+  .island .zone[data-day="1"]{stroke:var(--d1);}
+  .island .zone[data-day="2"]{stroke:var(--d2);}
+  .island .zone[data-day="3"]{stroke:var(--d3);}
+  .island .zone[data-day="4"]{stroke:var(--d4);}
+  #mf-1:checked ~ svg .zone[data-day="1"],
+  #mf-2:checked ~ svg .zone[data-day="2"],
+  #mf-3:checked ~ svg .zone[data-day="3"],
+  #mf-4:checked ~ svg .zone[data-day="4"]{opacity:1;}
+  #mf-1:checked ~ svg .pin:not([data-day="1"]):not([data-day="x"]),
+  #mf-2:checked ~ svg .pin:not([data-day="2"]):not([data-day="x"]),
+  #mf-3:checked ~ svg .pin:not([data-day="3"]):not([data-day="x"]),
+  #mf-4:checked ~ svg .pin:not([data-day="4"]):not([data-day="x"]){opacity:.16;}
+  .mapfig figcaption{margin:.65rem 0 0;font-size:.79rem;color:var(--ink-2);line-height:1.65;}
+
+  .chain{display:flex;align-items:center;flex-wrap:wrap;gap:.1rem .05rem;margin:1.1rem 0 0;padding:.7rem .8rem;background:var(--surface);border:1px solid var(--rule-soft);border-radius:3px;overflow-x:auto;}
+  .chain .node{font-size:.78rem;font-weight:600;white-space:nowrap;padding:.12rem .42rem;border-radius:2px;background:var(--surface-2);border:1px solid var(--rule-soft);}
+  .chain .node.base{border-color:var(--fix);color:var(--fix);}
+  .chain .hop{font-family:var(--font-mono);font-size:.66rem;color:var(--ink-3);white-space:nowrap;padding:0 .3rem;letter-spacing:.02em;}
+  .chain .hop::before{content:"—— ";letter-spacing:-.1em;}
+  .chain .hop::after{content:" ——";letter-spacing:-.1em;}
+
+  .nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);margin:2rem -1.15rem 0;padding:0 1.15rem;}
+  .nav ul{display:flex;gap:.15rem;list-style:none;margin:0;padding:.5rem 0;overflow-x:auto;scrollbar-width:none;}
+  .nav ul::-webkit-scrollbar{display:none;}
+  .nav a{display:block;white-space:nowrap;text-decoration:none;font-family:var(--font-mono);font-size:.75rem;letter-spacing:.04em;color:var(--ink-2);padding:.3rem .6rem;border-radius:2px;}
+  .nav a:hover,.nav a:focus-visible{color:var(--ink);background:var(--surface);}
+
+  .day{margin:3rem 0 0;}
+  .day-head{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;padding-bottom:.7rem;border-bottom:2px solid var(--ink);}
+  .day-n{font-family:var(--font-mono);font-size:1.9rem;line-height:1;font-weight:600;color:var(--sea);font-variant-numeric:tabular-nums;}
+  .day-meta{display:flex;flex-direction:column;gap:.1rem;}
+  .day-date{font-family:var(--font-mono);font-size:.8rem;color:var(--ink-2);letter-spacing:.04em;}
+  .day-area{font-size:1.05rem;font-weight:700;line-height:1.3;}
+  .day-note{margin:.9rem 0 0;padding:.7rem .85rem;border-left:2px solid var(--sand);background:var(--sand-soft);color:var(--ink);font-size:.85rem;border-radius:0 2px 2px 0;}
+
+  .rail{list-style:none;margin:1.2rem 0 0;padding:0 0 0 .1rem;}
+  .rail li{position:relative;display:grid;grid-template-columns:3.6rem 1fr;gap:.7rem;padding:.28rem 0 .28rem 1.05rem;align-items:baseline;}
+  .rail li::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--rule);}
+  .rail li:first-child::before{top:.75rem;}
+  .rail li:last-child::before{bottom:calc(100% - .75rem);}
+  .rail li::after{content:"";position:absolute;left:-2.5px;top:.68rem;width:6px;height:6px;border-radius:50%;background:var(--rule);}
+  .rail li.fixed::after{background:var(--fix);box-shadow:0 0 0 3px var(--fix-soft);}
+  .rail li.open::after{background:var(--bg);border:1px solid var(--rule);}
+  .rail time{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-2);font-variant-numeric:tabular-nums;}
+  .rail li.fixed time{color:var(--fix);font-weight:600;}
+  .rail .what{font-size:.87rem;}
+  .rail li.open .what{color:var(--ink-3);font-style:italic;}
+  .rail .tag{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;color:var(--fix);border:1px solid var(--fix);border-radius:2px;padding:0 .3rem;margin-left:.4rem;vertical-align:.08em;}
+
+  .cat{margin:1.6rem 0 0;}
+  .cat h3{display:flex;align-items:center;gap:.5rem;margin:0 0 .1rem;font-size:.78rem;font-weight:700;letter-spacing:.09em;color:var(--ink-2);}
+  .cat h3::before{content:"";width:.55rem;height:.55rem;border-radius:1px;flex:none;background:var(--sea);}
+  .cat[data-kind="food"] h3::before{background:var(--sand);}
+  .cat h3 .hint{font-weight:400;letter-spacing:0;color:var(--ink-3);font-size:.72rem;}
+
+  ul.places{list-style:none;margin:0;padding:0;}
+  ul.places li{display:flex;align-items:flex-start;gap:.6rem;padding:.62rem 0;border-bottom:1px solid var(--rule-soft);}
+  ul.places li:last-child{border-bottom:0;}
+  .p-main{flex:1;min-width:0;}
+  .p-name{font-weight:600;font-size:.95rem;line-height:1.45;}
+  .rec{display:inline-block;margin-left:.35rem;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;color:var(--sand);border:1px solid var(--sand);border-radius:2px;padding:0 .25rem;vertical-align:.14em;}
+  .shut{display:inline-block;margin-left:.35rem;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;color:var(--fix);border:1px solid var(--fix);border-radius:2px;padding:0 .25rem;vertical-align:.14em;}
+  .p-note{display:block;font-size:.79rem;color:var(--ink-2);line-height:1.55;margin-top:.05rem;}
+  .p-note b{color:var(--warn);}
+  .p-links{display:flex;gap:.25rem;flex:none;padding-top:.1rem;}
+  .p-links a{display:grid;place-items:center;width:1.85rem;height:1.85rem;border:1px solid var(--rule);border-radius:2px;color:var(--ink-2);background:var(--surface);transition:color .15s ease,border-color .15s ease,background .15s ease;}
+  .p-links a:hover,.p-links a:focus-visible{color:var(--sea);border-color:var(--sea);background:var(--sea-soft);}
+  .p-links svg{width:.85rem;height:.85rem;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+
+  .extra{background:var(--surface);border:1px solid var(--rule-soft);border-radius:3px;padding:1.1rem 1.1rem 1.2rem;margin:1.1rem 0 0;box-shadow:var(--shadow);}
+  .extra h3{margin:0;font-size:1rem;display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;}
+  .extra .key{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;color:var(--ink-3);}
+  .extra p{margin:.7rem 0 0;font-size:.87rem;color:var(--ink-2);}
+  .extra p strong{color:var(--ink);}
+  .extra .must{display:inline-block;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;color:var(--fix);border:1px solid var(--fix);border-radius:2px;padding:0 .3rem;}
+  .links{list-style:none;margin:.85rem 0 0;padding:0;display:flex;flex-direction:column;gap:.4rem;}
+  .links a{color:var(--sea);text-decoration:none;font-size:.83rem;border-bottom:1px solid var(--sea-soft);padding-bottom:.05rem;}
+  .links a:hover,.links a:focus-visible{border-bottom-color:var(--sea);}
+  .links li span{color:var(--ink-3);font-size:.78rem;}
+
+  .tbl-scroll{overflow-x:auto;margin:.9rem 0 0;}
+  table{border-collapse:collapse;width:100%;font-size:.83rem;}
+  th,td{text-align:left;padding:.45rem .6rem;border-bottom:1px solid var(--rule-soft);vertical-align:top;}
+  th{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.09em;color:var(--ink-3);font-weight:600;border-bottom-color:var(--rule);white-space:nowrap;}
+  td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-2);}
+  tr.hi td{color:var(--ink);}
+  tr.hi td.num{color:var(--fix);font-weight:600;}
+
+  .sec{margin:3.5rem 0 0;}
+  .sec > h2{font-size:1.15rem;margin:0 0 .2rem;padding-bottom:.6rem;border-bottom:2px solid var(--ink);display:flex;align-items:baseline;gap:.6rem;}
+  .sec > h2 .idx{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-3);letter-spacing:.1em;}
+  .sec > p.lede{margin:.85rem 0 0;color:var(--ink-2);font-size:.88rem;}
+
+  .callout{margin:1rem 0 0;padding:.8rem .9rem;border:1px solid var(--fix);border-left-width:3px;border-radius:0 2px 2px 0;background:var(--fix-soft);font-size:.85rem;color:var(--ink);}
+  .callout b{color:var(--fix);}
+  .caution{margin:1rem 0 0;padding:.8rem .9rem;border:1px solid var(--warn);border-left-width:3px;border-radius:0 2px 2px 0;background:var(--warn-soft);font-size:.85rem;color:var(--ink);}
+  .caution b{color:var(--warn);}
+
+  footer{margin:3.5rem 0 0;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.78rem;color:var(--ink-3);}
+  footer dl{display:grid;grid-template-columns:auto 1fr;gap:.25rem .7rem;margin:.6rem 0 0;}
+  footer dt{color:var(--ink-2);}
+  footer dd{margin:0;}
+  a:focus-visible,.route a:focus-visible{outline:2px solid var(--sea);outline-offset:2px;}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10.5 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 1 0-5.7-5.7l-1.3 1.3"/><path d="M13.5 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 1 0 5.7 5.7l1.3-1.3"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<div class="wrap">
+
+  <header class="mast">
+    <p class="eyebrow">Trip reference sheet</p>
+    <h1>宮古島 旅程シート</h1>
+    <p class="dates">2026.09.21 MON — 09.25 FRI ／ 4泊5日・2名</p>
+    <p class="sub">日ごとに回るエリアが決まっています。下のカテゴリから行きたいものを選んで、空いている時間に入れていってください。宿は全日 <strong>ホテルピースリーイン宮古島NEXUS（平良西里）</strong>。市街のど真ん中なので、夜は車を置いて歩けば飲めます。</p>
+
+    <nav class="route" aria-label="5日間の流れ">
+      <a href="#d1"><span class="n">DAY 1</span><span class="a">平良市街</span></a>
+      <a href="#d2"><span class="n">DAY 2</span><span class="a">伊良部・下地</span></a>
+      <a href="#d3"><span class="n">DAY 3</span><span class="a">北部・池間</span></a>
+      <a href="#d4"><span class="n">DAY 4</span><span class="a">島の南側</span></a>
+      <a href="#d5"><span class="n">DAY 5</span><span class="a">移動のみ</span></a>
+    </nav>
+
+    <figure class="mapfig">
+      <input type="radio" name="mapfilter" id="mf-all" checked>
+      <input type="radio" name="mapfilter" id="mf-1">
+      <input type="radio" name="mapfilter" id="mf-2">
+      <input type="radio" name="mapfilter" id="mf-3">
+      <input type="radio" name="mapfilter" id="mf-4">
+      <div class="map-tabs" role="group" aria-label="日ごとに範囲を表示">
+        <label for="mf-all">全部</label>
+        <label for="mf-1"><i></i>1日目</label>
+        <label for="mf-2"><i></i>2日目</label>
+        <label for="mf-3"><i></i>3日目</label>
+        <label for="mf-4"><i></i>4日目</label>
+      </div>
+
+      <svg class="island" viewBox="0 0 720 520" role="img"
+           aria-label="宮古島の模式図。ホテルのある平良市街を中心に、1日目は平良周辺と空港側、2日目は西の伊良部島・下地島、3日目は北の狩俣・池間島、4日目は南側の海岸線を東から西へ回る。">
+        <path class="land" d="M300,232 Q311,186 380,173 Q462,166 522,192 Q596,217 611,276 Q623,326 601,356 Q541,416 470,421 Q390,426 350,396 Q301,366 299,301 Z"/>
+        <path class="land" d="M597,352 L690,424 L679,439 L586,369 Z"/>
+        <ellipse class="land" cx="370" cy="96" rx="34" ry="26"/>
+        <path class="land" d="M232,246 Q228,206 190,190 Q148,178 128,206 Q112,238 130,272 Q152,308 196,300 Q230,290 232,246 Z"/>
+        <path class="land" d="M126,204 Q104,168 78,172 Q56,178 58,214 Q60,254 84,276 Q108,292 124,272 Q110,238 126,204 Z"/>
+        <ellipse class="land" cx="322" cy="452" rx="30" ry="24"/>
+
+        <line class="bridge" x1="372" y1="168" x2="370" y2="124"/>
+        <line class="bridge" x1="299" y1="262" x2="234" y2="256"/>
+        <line class="bridge" x1="352" y1="400" x2="331" y2="429"/>
+        <line class="bridge" x1="126" y1="212" x2="128" y2="264"/>
+
+        <text class="isle-label" x="370" y="60" text-anchor="middle">池間島</text>
+        <text class="isle-label" x="186" y="330" text-anchor="middle">伊良部島</text>
+        <text class="isle-label" x="70" y="312" text-anchor="middle">下地島</text>
+        <text class="isle-label" x="322" y="492" text-anchor="middle">来間島</text>
+        <text class="isle-label" x="470" y="300" text-anchor="middle">宮古島</text>
+
+        <ellipse class="zone" data-day="1" cx="340" cy="222" rx="76" ry="80"/>
+        <ellipse class="zone" data-day="2" cx="158" cy="236" rx="136" ry="110"/>
+        <ellipse class="zone" data-day="3" cx="372" cy="128" rx="70" ry="92"/>
+        <ellipse class="zone" data-day="4" cx="492" cy="400" rx="216" ry="86" transform="rotate(-14 492 400)"/>
+
+        <g class="pin base" data-day="x">
+          <circle class="ring" cx="330" cy="216" r="11"/>
+          <circle cx="330" cy="216" r="5"/>
+          <text x="343" y="213">ホテル（平良西里）</text>
+          <text class="mins" x="343" y="227">拠点・夜は徒歩で飲める</text>
+        </g>
+        <g class="pin" data-day="1">
+          <circle cx="366" cy="256" r="4"/>
+          <text x="377" y="260">宮古空港 <tspan class="mins">10〜15分</tspan></text>
+        </g>
+        <g class="pin" data-day="1">
+          <circle cx="332" cy="184" r="4"/>
+          <text x="343" y="181">砂山ビーチ <tspan class="mins">10〜15分</tspan></text>
+        </g>
+
+        <g class="pin" data-day="2">
+          <circle cx="266" cy="259" r="4"/>
+          <text x="255" y="278" text-anchor="end">伊良部大橋 <tspan class="mins">10分</tspan></text>
+        </g>
+        <g class="pin" data-day="2">
+          <circle cx="170" cy="290" r="4"/>
+          <text x="181" y="294">渡口の浜 <tspan class="mins">20分</tspan></text>
+        </g>
+        <g class="pin" data-day="2">
+          <circle cx="116" cy="256" r="4"/>
+          <text x="127" y="248">中の島ビーチ <tspan class="mins">30分</tspan></text>
+        </g>
+        <g class="pin" data-day="2">
+          <circle cx="76" cy="180" r="4"/>
+          <text x="87" y="163">17END <tspan class="mins">20〜40分＋徒歩15分</tspan></text>
+        </g>
+        <g class="pin" data-day="2">
+          <circle cx="288" cy="238" r="4"/>
+          <text x="299" y="234">ユニの浜 <tspan class="mins">集合トゥリバー・5分</tspan></text>
+        </g>
+
+        <g class="pin" data-day="3">
+          <circle cx="372" cy="146" r="4"/>
+          <text x="383" y="150">池間大橋・狩俣 <tspan class="mins">30分</tspan></text>
+        </g>
+        <g class="pin" data-day="3">
+          <circle cx="370" cy="96" r="4"/>
+          <text x="381" y="100">池間島 <tspan class="mins">30分</tspan></text>
+        </g>
+
+        <g class="pin" data-day="4">
+          <circle cx="585" cy="322" r="4"/>
+          <text x="596" y="318">新城海岸 <tspan class="mins">30分</tspan></text>
+        </g>
+        <g class="pin" data-day="4">
+          <circle cx="470" cy="398" r="4"/>
+          <text x="481" y="412">シギラ <tspan class="mins">30分</tspan></text>
+        </g>
+        <g class="pin" data-day="4">
+          <circle cx="352" cy="386" r="4"/>
+          <text x="341" y="378" text-anchor="end">与那覇前浜 <tspan class="mins">20分</tspan></text>
+        </g>
+        <g class="pin" data-day="4">
+          <circle cx="322" cy="452" r="4"/>
+          <text x="311" y="456" text-anchor="end">来間島 <tspan class="mins">25分</tspan></text>
+        </g>
+        <g class="pin" data-day="4">
+          <circle cx="672" cy="428" r="4"/>
+          <text x="661" y="446" text-anchor="end">東平安名崎 <tspan class="mins">40分</tspan></text>
+        </g>
+      </svg>
+
+      <figcaption><strong>上のタブを押すと、その日に回る範囲だけが光ります。</strong> 分数はホテルからの車の目安。島は小さいので、隣り合うピンは「ついでに寄れる」距離です。橋を渡る3つの島（伊良部・池間・来間）が、それぞれ1日ぶんのまとまりになっています。</figcaption>
+    </figure>
+  </header>
+
+  <nav class="nav" aria-label="ページ内ナビ">
+    <ul>
+      <li><a href="#asa">朝ごはん</a></li>
+      <li><a href="#d1">1日目</a></li>
+      <li><a href="#d2">2日目</a></li>
+      <li><a href="#d3">3日目</a></li>
+      <li><a href="#d4">4日目</a></li>
+      <li><a href="#d5">5日目</a></li>
+      <li><a href="#extras">番外編</a></li>
+      <li><a href="#todo">次に決めること</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ 朝ごはん ══ -->
+  <section class="sec" id="asa">
+    <h2><span class="idx">MORNING</span>朝ごはん — 全日共通</h2>
+    <p class="lede">ホテルの朝食は 7:00〜9:30（ピースアイランド宮古島の館内で提供）。外で食べたい朝はここから。どれも朝しかやっていないので、行くなら早出の日に。</p>
+    <div class="cat" data-kind="food">
+      <h3>朝だけの店</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">久松製麺所「朝そば」</span><span class="p-note"><b>7:00〜9:00のみ</b>・釜玉そば500円／日曜定休。製麺所の中で食べる。※直営食堂「じんく屋」は別場所・昼営業</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E4%B9%85%E6%9D%BE%E8%A3%BD%E9%BA%BA%E6%89%80/data=!4m2!3m1!1s0x34f45412c83f7db9:0x7915e3fa07e1bb2a" aria-label="久松製麺所 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://hisamatsu-seimen.com/" aria-label="久松製麺所 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E4%B9%85%E6%9D%BE%E8%A3%BD%E9%BA%BA%E6%89%80+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="久松製麺所 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">くじら食堂</span><span class="p-note">ポーク玉子おにぎり専門店・7:30〜13:00／<b>火曜定休</b>。2024年11月に平良下里220-1へ移転</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8F%E3%81%98%E3%82%89%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%B9%B3%E8%89%AF%E4%B8%8B%E9%87%8C" aria-label="くじら食堂 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%81%8F%E3%81%98%E3%82%89%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93+%E5%AE%9A%E4%BC%91%E6%97%A5" aria-label="くじら食堂 を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%8F%E3%81%98%E3%82%89%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="くじら食堂 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">chill宮古<span class="rec">地元</span></span><span class="p-note">朝〜夕はカフェで <b>7:00〜17:00</b>（朝定食・宮古そば・アサイーボウル）、夜はBARになる二毛作の店。<b>駐車場なし</b></span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=chill%E5%AE%AE%E5%8F%A4+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%B9%B3%E8%89%AF%E4%B8%8B%E9%87%8C" aria-label="chill宮古 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://naturaliber.com/" aria-label="chill宮古 運営会社サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=chill%E5%AE%AE%E5%8F%A4" aria-label="chill宮古 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ DAY 1 ══ -->
+  <section class="day" id="d1">
+    <div class="day-head">
+      <span class="day-n">01</span>
+      <span class="day-meta">
+        <span class="day-date">9月21日（月・敬老の日）</span>
+        <span class="day-area">平良市街・空港周辺</span>
+      </span>
+    </div>
+
+    <ol class="rail">
+      <li class="fixed"><time>10:40</time><span class="what">宮古空港着 — ロビーで送迎待ち<span class="tag">確定</span></span></li>
+      <li class="fixed"><time>11:00</time><span class="what">レンタカー受取・出発<span class="tag">確定</span></span></li>
+      <li class="open"><time>11:30–14:00</time><span class="what">空き — 昼ごはん</span></li>
+      <li class="fixed"><time>14:00</time><span class="what">チェックイン<span class="tag">確定</span></span></li>
+      <li class="open"><time>15:00–18:00</time><span class="what">空き — 午後に1〜2箇所</span></li>
+      <li class="open"><time>18:00–</time><span class="what">空き — 夜ごはん・2軒目・星空</span></li>
+    </ol>
+
+    <div class="chain" aria-label="1日目の移動（所要は目安）">
+      <span class="node">宮古空港</span><span class="hop">10分</span>
+      <span class="node base">ホテル・平良市街</span><span class="hop">15分</span>
+      <span class="node">砂山ビーチ</span><span class="hop">15分</span>
+      <span class="node base">ホテル（夜は徒歩）</span>
+    </div>
+
+    <p class="day-note">初日は移動疲れがあるので<strong>近場でまとめる</strong>のがおすすめ。空港から市街まで10分です。ホテルの駐車場は20台・予約不可なので、<strong>早めにチェックインして枠を確保</strong>しておきたいところ。</p>
+
+    <div class="caution"><b>この日休みの店：</b> 果実家（月曜定休）。<br><b>この日しか行けない店：</b> RICCO gelato は火・水定休なので、<b>1日目か4日目のどちらか</b>です。古謝そば屋も水曜定休なので3日目には行けません。</div>
+
+    <div class="cat">
+      <h3>ビーチ</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">砂山ビーチ</span><span class="p-note">市街から15分。<b>シンボルのアーチ岩は崩落の危険で柵に囲まれ、近づけないという地元サイトの情報あり</b>（観光協会の公式ページには記載なし）</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E7%A0%82%E5%B1%B1%E3%83%93%E3%83%BC%E3%83%81/data=!4m2!3m1!1s0x34f453b561c137fb:0x9c1e4aff2f1eb6f6" aria-label="砂山ビーチ をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyako-island.net/beach_and_spot/beach_spot_001/" aria-label="砂山ビーチ 観光協会ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E7%A0%82%E5%B1%B1%E3%83%93%E3%83%BC%E3%83%81+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="砂山ビーチ をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>ランチ</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">古謝そば屋</span><span class="p-note">昭和7年創業の宮古そば老舗。<b>水曜定休</b>（＝3日目には行けない）</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E5%8F%A4%E8%AC%9D%E3%81%9D%E3%81%B0%E5%B1%8B/data=!4m2!3m1!1s0x34f4540dba2efc3d:0x4466541c4caca6c6" aria-label="古謝そば屋 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://kojasoba.com/" aria-label="古謝そば屋 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E5%8F%A4%E8%AC%9D%E3%81%9D%E3%81%B0%E5%B1%8B" aria-label="古謝そば屋 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">としこ食堂<span class="rec">地元</span></span><span class="p-note">2023年開店・ご夫婦経営。日替わり「としこ定食」800円が看板。※<b>ポキ丼が名物という裏付けは弱く、常時提供かは不明</b></span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A8%E3%81%97%E3%81%93%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="としこ食堂 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%81%A8%E3%81%97%E3%81%93%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93+%E5%AE%9A%E4%BC%91%E6%97%A5" aria-label="としこ食堂 を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%A8%E3%81%97%E3%81%93%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="としこ食堂 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">もずく麺屋んつばた まてぃだ通り店<span class="rec">地元</span></span><span class="p-note">もずく麺・もずく食べ放題。日曜定休、予約不可</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E3%82%82%E3%81%9A%E3%81%8F%E9%BA%BA%E5%B1%8B%E3%82%93%E3%81%A4%E3%81%B0%E3%81%9F+%E3%81%BE%E3%81%A6%E3%81%83%E3%81%A0%E9%80%9A%E3%82%8A%E5%BA%97/data=!4m2!3m1!1s0x34f453f46b7f86df:0x2a73e5ce17df55f" aria-label="んつばた をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.maja-land.com/shop.html" aria-label="んつばた 運営公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%82%93%E3%81%A4%E3%81%B0%E3%81%9F+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="んつばた をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">RuLer&#39;s TACORiCE 宮古アイランド店</span><span class="p-note">平良松原548-1・マックスバリュ宮古南店の商業施設内。11:00〜22:00、駐車場多数。※本店は宜野湾のチェーン</span></div><div class="p-links"><a href="https://www.google.com/maps/place/RuLer's%EF%BB%BF+TACORiCE+%E5%AE%AE%E5%8F%A4%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E5%BA%97/data=!4m2!3m1!1s0x34f455b0dd022bd1:0x3f0537b83cced0e9" aria-label="RuLers TACORiCE をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://rulers-tacorice.com/shop/" aria-label="RuLers TACORiCE 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=rulers+tacorice+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="RuLers TACORiCE をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>カフェ・デザート</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">RICCO gelato<span class="shut">火水休</span></span><span class="p-note">下里通り。11:00〜17:45、<b>専用駐車場なし</b>（コインパーキング）。食べログ百名店</span></div><div class="p-links"><a href="https://www.google.com/maps/place/RICCO+gelato%EF%BC%88%E3%83%AA%E3%83%83%E3%82%B3%E3%82%B8%E3%82%A7%E3%83%A9%E3%83%BC%E3%83%88%EF%BC%89/data=!4m2!3m1!1s0x34f4538b26b893f9:0xc3c5ccefae51258f" aria-label="RICCO gelato をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://ricco-gelato.com/" aria-label="RICCO gelato 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=RICCO+gelato+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="RICCO gelato をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">Blue Turtle Farm マンゴーカフェ</span><span class="p-note"><b>宮古空港のすぐ横</b>（車1分）。11:00〜18:00。マンゴーパフェ、敷地内にゾウガメ。※マンゴーは6月中旬〜8月下旬が中心</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E3%83%96%E3%83%AB%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%88%E3%83%AB%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0+%E3%83%9E%E3%83%B3%E3%82%B4%E3%83%BC%E3%82%AB%E3%83%95%E3%82%A7/data=!4m2!3m1!1s0x34f45528f9bd9659:0xde862c58ab9fbe18" aria-label="マンゴーカフェ をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://blueturtlefarm.stores.jp/" aria-label="Blue Turtle Farm 公式"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=blueturtlefarm+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="Blue Turtle Farm をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>夜ごはん <span class="hint">1軒目</span></h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">宮古牛焼肉 玉城<span class="rec">地元</span></span><span class="p-note">公設市場前。宮古牛一頭買い。17:00開店、個室あり</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E5%AE%AE%E5%8F%A4%E7%89%9B%E7%84%BC%E8%82%89+%E7%8E%89%E5%9F%8E/data=!4m2!3m1!1s0x34f453ad04272371:0x72d8d4af48c2dfe6" aria-label="玉城 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E5%AE%AE%E5%8F%A4%E7%89%9B%E7%84%BC%E8%82%89+%E7%8E%89%E5%9F%8E+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E4%BA%88%E7%B4%84" aria-label="玉城 を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E5%AE%AE%E5%8F%A4%E7%89%9B%E7%84%BC%E8%82%89+%E7%8E%89%E5%9F%8E+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="玉城 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">ホルモン家<span class="rec">地元</span></span><span class="p-note">17:00〜22:30。<b>2026年4月に平良西里46-14 2Fへ移転済み</b>——地図アプリが旧住所のままの場合あり</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9B%E3%83%AB%E3%83%A2%E3%83%B3%E5%AE%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%B9%B3%E8%89%AF%E8%A5%BF%E9%87%8C" aria-label="ホルモン家 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyakojima-horumonya.com/" aria-label="ホルモン家 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%83%9B%E3%83%AB%E3%83%A2%E3%83%B3%E5%AE%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="ホルモン家 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">居酒家 でいりぐち<span class="rec">地元</span></span><span class="p-note"><b>予約必須・電話のみ</b>（DM不可、翌月分から受付）。本店は全席喫煙可・20歳未満入店不可。禁煙の下里通り店あり</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B1%85%E9%85%92%E5%AE%B6+%E3%81%A7%E3%81%84%E3%82%8A%E3%81%90%E3%81%A1+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="でいりぐち をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E5%B1%85%E9%85%92%E5%AE%B6+%E3%81%A7%E3%81%84%E3%82%8A%E3%81%90%E3%81%A1+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E4%BA%88%E7%B4%84" aria-label="でいりぐち を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%A7%E3%81%84%E3%82%8A%E3%81%90%E3%81%A1+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="でいりぐち をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">島食材&amp;宮古牛 炭火 わとわ<span class="rec">地元</span></span><span class="p-note">コの字カウンターの炭火焼。平良下里566-2</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%8F%E3%81%A8%E3%82%8F+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%B9%B3%E8%89%AF%E4%B8%8B%E9%87%8C" aria-label="わとわ をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E7%82%AD%E7%81%AB+%E3%82%8F%E3%81%A8%E3%82%8F+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E4%BA%88%E7%B4%84" aria-label="わとわ を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%82%8F%E3%81%A8%E3%82%8F+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="わとわ をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">島大衆酒場 たけし写真館<span class="rec">地元</span></span><span class="p-note">元・写真館を改装した居酒屋（写真館ではありません）。17:00〜25:00、<b>全席喫煙可</b>。チェキ撮影無料</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%9F%E3%81%91%E3%81%97%E5%86%99%E7%9C%9F%E9%A4%A8+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%B9%B3%E8%89%AF%E8%A5%BF%E9%87%8C" aria-label="たけし写真館 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://takeshishashinkan.owst.jp/" aria-label="たけし写真館 公式ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%9F%E3%81%91%E3%81%97%E5%86%99%E7%9C%9F%E9%A4%A8+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="たけし写真館 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">海鮮酒家 中山</span><span class="p-note">西里大通り沿い。<b>ハッピーアワー16:00〜19:00</b></span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E6%B5%B7%E9%AE%AE%E9%85%92%E5%AE%B6+%E4%B8%AD%E5%B1%B1/data=!4m2!3m1!1s0x34f4538cc5da24bd:0xa77e78c8e5cd2098" aria-label="海鮮酒家 中山 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.chu-zan.jp/" aria-label="海鮮酒家 中山 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E6%B5%B7%E9%AE%AE%E9%85%92%E5%AE%B6+%E4%B8%AD%E5%B1%B1+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="海鮮酒家 中山 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">しゃぶ前屋 宮古島</span><span class="p-note">あぐー豚と水晶鍋。17:00〜23:00・無休、個室あり。<b>民謡ライブ 18:15／21:00（不定期）</b></span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E3%81%97%E3%82%83%E3%81%B6%E5%89%8D%E5%B1%8B+%E5%AE%AE%E5%8F%A4%E5%B3%B6%E5%BA%97/data=!4m2!3m1!1s0x34f453fb921e03cb:0xb5b4d671a83f6f5c" aria-label="しゃぶ前屋 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://naturaliber.com/" aria-label="しゃぶ前屋 運営公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%97%E3%82%83%E3%81%B6%E5%89%8D%E5%B1%8B+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="しゃぶ前屋 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">Village of Loewe レーベの村</span><span class="p-note">平良松原。<b>20:00〜24:00</b>のBAR／イベントスペース。<b>周辺に街灯がなく真っ暗でタクシー推奨</b>（＝飲むなら車では行けない）</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E3%83%AC%E3%83%BC%E3%83%99%E3%81%AE%E6%9D%91/data=!4m2!3m1!1s0x34f45442efed70ad:0x92ce6a24714dbbbd" aria-label="レーベの村 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%83%AC%E3%83%BC%E3%83%99%E3%81%AE%E6%9D%91+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93" aria-label="レーベの村 を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%83%AC%E3%83%BC%E3%83%99%E3%81%AE%E6%9D%91+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="レーベの村 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>民謡居酒屋 <span class="hint">ライブあり</span></h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">宮古島三線ライブ居酒屋 美ら島<span class="rec">地元</span></span><span class="p-note">ライブ二部制 18:40／21:00。Liveチャージ1,000円＋サービス料。<b>2025年12月に平良下里556へ移転</b>。宮古島まもる君が登場</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%8E%E3%82%89%E5%B3%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E4%B8%89%E7%B7%9A%E3%83%A9%E3%82%A4%E3%83%96+%E5%B9%B3%E8%89%AF%E4%B8%8B%E9%87%8C" aria-label="美ら島 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://churashima.org/" aria-label="美ら島 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E7%BE%8E%E3%82%89%E5%B3%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E4%B8%89%E7%B7%9A" aria-label="美ら島 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">あかがーら 宮古島店<span class="rec">地元</span></span><span class="p-note">島唄ライブ <b>19:00／20:30</b>の1日2回。西里大通り沿い。宮古島まもる君が出演</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%82%E3%81%8B%E3%81%8C%E3%83%BC%E3%82%89+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="あかがーら をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyakojima-akaga-ra.jp/" aria-label="あかがーら 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%82%E3%81%8B%E3%81%8C%E3%83%BC%E3%82%89+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="あかがーら をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">うさぎや 宮古島店</span><span class="p-note">三線LIVE 19時／21時、<b>エイサー演舞あり</b>。<b>2025年に平良西里224 2Fへ移転</b>（公式サイトの住所は未更新）。DM予約不可</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%86%E3%81%95%E3%81%8E%E3%82%84+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%B9%B3%E8%89%AF%E8%A5%BF%E9%87%8C" aria-label="うさぎや をマップで見る"><svg><use href="#i-map"/></svg></a><a href="http://usagiya-miyako.com/" aria-label="うさぎや 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%86%E3%81%95%E3%81%8E%E3%82%84+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="うさぎや をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>BAR <span class="hint">2軒目 ／「やまちゃんからの紹介」と言う</span></h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">chill宮古<span class="rec">地元</span></span><span class="p-note">昼はカフェ、夜はBAR。平良下里28-1、<b>駐車場なし</b></span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=chill%E5%AE%AE%E5%8F%A4+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%B9%B3%E8%89%AF%E4%B8%8B%E9%87%8C" aria-label="chill宮古 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://naturaliber.com/" aria-label="chill宮古 運営会社サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=chill%E5%AE%AE%E5%8F%A4" aria-label="chill宮古 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">Bar Over Flow<span class="rec">地元</span></span><span class="p-note">平良下里94-8。カラオケあり。深夜は島の飲食店スタッフが集まる店</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bar+Over+Flow+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="Bar Over Flow をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=Bar+Over+Flow+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93" aria-label="Bar Over Flow を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=bar+overflow+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="Bar Over Flow をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">SWEETS&amp;BAR 果実家<span class="rec">地元</span></span><span class="shut">月曜休</span><span class="p-note">スイーツ＋フルーツカクテル。20:00〜、<b>予約できるのは20:00と20:30のみ</b>。平良西里153-3</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9E%9C%E5%AE%9F%E5%AE%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="果実家 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E6%9E%9C%E5%AE%9F%E5%AE%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93" aria-label="果実家 を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E6%9E%9C%E5%AE%9F%E5%AE%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="果実家 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ DAY 2 ══ -->
+  <section class="day" id="d2">
+    <div class="day-head">
+      <span class="day-n">02</span>
+      <span class="day-meta">
+        <span class="day-date">9月22日（火・国民の休日）</span>
+        <span class="day-area">伊良部島・下地島</span>
+      </span>
+    </div>
+
+    <ol class="rail">
+      <li class="open"><time>07:00–09:30</time><span class="what">ホテル朝食</span></li>
+      <li class="open"><time>08:30–16:00</time><span class="what">空き — 伊良部・下地島</span></li>
+      <li class="fixed"><time>18:15</time><span class="what">郷家（平良・現金のみ）<span class="tag">確定</span></span></li>
+      <li class="open"><time>20:30–</time><span class="what">空き — 2軒目</span></li>
+    </ol>
+
+    <div class="chain" aria-label="2日目の移動（所要は目安）">
+      <span class="node base">ホテル</span><span class="hop">10分</span>
+      <span class="node">伊良部大橋</span><span class="hop">10分</span>
+      <span class="node">渡口の浜 or 中の島</span><span class="hop">15分</span>
+      <span class="node">17END ＋徒歩30分</span><span class="hop">20分</span>
+      <span class="node">なかゆくい商店</span><span class="hop">25分</span>
+      <span class="node base">ホテル（郷家）</span>
+    </div>
+
+    <div class="callout"><b>三角点は現在「立入禁止」です。</b> 2021年2月から入口に立入禁止の看板が設置されています。高さ約70mの柵なし断崖で足場が崩れやすく、滑落の危険が報じられています。<b>この旅程からは外しました。</b></div>
+
+    <div class="caution"><b>17ENDは車で行けません。</b> 管理用通路は一般車両通行禁止で、ゲート手前の無料駐車場（20台程度）から<b>片道700m〜1km・徒歩10〜15分</b>。さらに<b>砂浜は干潮時のみ</b>現れ、満潮時はビーチに降りられません。往復30分＋潮の時刻を計算に入れてください。</div>
+
+    <div class="cat">
+      <h3>ビーチ <span class="hint">18:15の郷家があるので、基本1つに絞る</span></h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">渡口の浜<span class="rec">地元</span></span><span class="p-note">伊良部島南西。弓状の白砂が約800m。駐車場・トイレ・有料シャワー・売店あり。<b>6〜9月はハブクラゲ注意報</b>、南風時は波が高い</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%A1%E5%8F%A3%E3%81%AE%E6%B5%9C+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6" aria-label="渡口の浜 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyako-island.net/beach_and_spot/beach_spot_004/" aria-label="渡口の浜 観光協会ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E6%B8%A1%E5%8F%A3%E3%81%AE%E6%B5%9C+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6" aria-label="渡口の浜 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">中の島ビーチ<span class="rec">地元</span></span><span class="p-note"><b>下地島</b>の湾（伊良部島ではない）。天然のシュノーケルスポットだが<b>海の家・売店・シャワーなし</b>、大型駐車場がなく<b>朝10時頃までに着かないと満車</b>。岩とサンゴでマリンシューズ必須</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%AD%E3%81%AE%E5%B3%B6%E3%83%93%E3%83%BC%E3%83%81+%E4%B8%8B%E5%9C%B0%E5%B3%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="中の島ビーチ をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E4%B8%AD%E3%81%AE%E5%B3%B6%E3%83%93%E3%83%BC%E3%83%81+%E4%B8%8B%E5%9C%B0%E5%B3%B6+%E3%82%B7%E3%83%A5%E3%83%8E%E3%83%BC%E3%82%B1%E3%83%AB+%E9%A7%90%E8%BB%8A%E5%A0%B4" aria-label="中の島ビーチ を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E4%B8%AD%E3%81%AE%E5%B3%B6%E3%83%93%E3%83%BC%E3%83%81+%E4%B8%8B%E5%9C%B0%E5%B3%B6" aria-label="中の島ビーチ をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">17END<span class="rec">地元</span></span><span class="p-note"><b>下地島</b>空港の滑走路北端。正式には「下地島空港 17側管理用通路」。<b>徒歩でしか行けない・砂浜は干潮時のみ</b></span></div><div class="p-links"><a href="https://www.google.com/maps/place/17END%E3%83%93%E3%83%BC%E3%83%81/data=!4m2!3m1!1s0x34f5add80a02f697:0x621d023620d2e93c" aria-label="17END をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.pref.okinawa.jp/machizukuri/kowankuko/1012617/1012639/1023024.html" aria-label="17END 沖縄県の通行ルール"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=17end+%E4%B8%8B%E5%9C%B0%E5%B3%B6" aria-label="17END をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat">
+      <h3>観光</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">伊良部大橋</span><span class="p-note">2015年開通、橋長3,540m。<b>無料で渡れる橋としては日本最長</b>。渡ること自体が観光</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BC%8A%E8%89%AF%E9%83%A8%E5%A4%A7%E6%A9%8B" aria-label="伊良部大橋 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyako-island.net/beach_and_spot/beach_spot_008/" aria-label="伊良部大橋 観光協会ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E4%BC%8A%E8%89%AF%E9%83%A8%E5%A4%A7%E6%A9%8B" aria-label="伊良部大橋 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>ランチ</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">伊良部そば かめ<span class="rec">地元</span></span><span class="p-note">古民家改装。名物は「かめそば」と「伊良部そば」（なまり節）。自家製麺。<b>行列店</b>（順番待ちシステム導入済み）。11:00〜16:00</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E4%BC%8A%E8%89%AF%E9%83%A8%E3%81%9D%E3%81%B0+%E3%81%8B%E3%82%81/data=!4m2!3m1!1s0x34f5ac7ca079436d:0x4534ac0ae7530f78" aria-label="伊良部そば かめ をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E4%BC%8A%E8%89%AF%E9%83%A8%E3%81%9D%E3%81%B0+%E3%81%8B%E3%82%81+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93+%E5%AE%9A%E4%BC%91%E6%97%A5" aria-label="伊良部そば かめ を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E4%BC%8A%E8%89%AF%E9%83%A8%E3%81%9D%E3%81%B0+%E3%81%8B%E3%82%81" aria-label="伊良部そば かめ をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">soraniwa hotel and café<span class="rec">地元</span></span><span class="p-note">オーシャンビューのホテル併設カフェ。宮古牛ハンバーグが名物（1,380円との情報）。<b>オーブン調理で提供に15分ほど</b>。営業時間・定休日は情報源で食い違うので要確認</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=soraniwa+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6" aria-label="soraniwa をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.urban-hotel.jp/soraniwa/" aria-label="soraniwa 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=soraniwa+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6" aria-label="soraniwa をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">YAMBURGER 宮古島<span class="rec">地元</span></span><span class="p-note">宮古島美崎牛100%パティ。10:00〜17:00（Instagram告知が最新）、ドライブスルーあり。<b>石垣島に本店がある</b>ので検索時は注意</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=YAMBURGER+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="YAMBURGER をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyako-island.net/gourmet/gourmet_spot_035/" aria-label="YAMBURGER 観光協会ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=yamburger+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="YAMBURGER をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>デザート</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">なかゆくい商店<span class="rec">地元</span></span><span class="p-note">名物は<b>紅いもさたぱんびん</b>（宮古ではサーターアンダギーをこう呼ぶ）。<b>9:30〜12:00／13:30〜16:00で昼休みあり</b>、売り切れ次第終了。<b>1人3個までの購入制限</b>、行列します</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E3%81%AA%E3%81%8B%E3%82%86%E3%81%8F%E3%81%84%E5%95%86%E5%BA%97/data=!4m2!3m1!1s0x34f5abcb0d49ccd3:0x6ba4be9a93fde287" aria-label="なかゆくい商店 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%81%AA%E3%81%8B%E3%82%86%E3%81%8F%E3%81%84%E5%95%86%E5%BA%97+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93+%E5%AE%9A%E4%BC%91%E6%97%A5" aria-label="なかゆくい商店 を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%AA%E3%81%8B%E3%82%86%E3%81%8F%E3%81%84%E5%95%86%E5%BA%97+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6" aria-label="なかゆくい商店 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">さとうきびの店 ぶーずやー<span class="shut">月曜休</span></span><span class="p-note">渡口の浜のすぐ近く。<b>2026年5月オープンの新店</b>。12:00〜18:00。黒糖タピオカ、伊良部島産さとうきびのクラフトコーラ。看板犬「ゆうさく」</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E3%81%95%E3%81%A8%E3%81%86%E3%81%8D%E3%81%B3%E3%81%AE%E5%BA%97%E3%81%B6%E3%83%BC%E3%81%9A%E3%82%84%E3%83%BC/data=!4m2!3m1!1s0x34f5ab29f0d0c47f:0xb5185c66a6553b82" aria-label="ぶーずやー をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%81%B6%E3%83%BC%E3%81%9A%E3%82%84%E3%83%BC+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93" aria-label="ぶーずやー を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%B6%E3%83%BC%E3%81%9A%E3%82%84%E3%83%BC+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6" aria-label="ぶーずやー をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>島内の夜 <span class="hint">郷家があるので今回は予備</span></h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">居酒屋 でんみ<span class="shut">月曜休</span></span><span class="p-note">渡口の浜すぐ。外観は一見普通の民家。ランチ限定の「でんみそば」も人気。<b>予約推奨</b></span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E5%B1%85%E9%85%92%E5%B1%8B%E3%81%A7%E3%82%93%E3%81%BF/data=!4m2!3m1!1s0x34f5ab70c69853dd:0xf36a89ac3ddccae1" aria-label="でんみ をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://izakayadenmi.wixsite.com/denmi" aria-label="でんみ 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E5%B1%85%E9%85%92%E5%B1%8B%E3%81%A7%E3%82%93%E3%81%BF+%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6" aria-label="でんみ をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ DAY 3 ══ -->
+  <section class="day" id="d3">
+    <div class="day-head">
+      <span class="day-n">03</span>
+      <span class="day-meta">
+        <span class="day-date">9月23日（水・秋分の日）</span>
+        <span class="day-area">北部・狩俣・池間島</span>
+      </span>
+    </div>
+
+    <ol class="rail">
+      <li class="open"><time>07:00–09:30</time><span class="what">ホテル朝食</span></li>
+      <li class="open"><time>09:00–16:30</time><span class="what">空き — 北部・池間島</span></li>
+      <li class="fixed"><time>18:00</time><span class="what">ハイサイ（平良下里・カウンター2名）<span class="tag">確定</span></span></li>
+      <li class="open"><time>20:00–</time><span class="what">空き — 2軒目</span></li>
+    </ol>
+
+    <div class="chain" aria-label="3日目の移動（所要は目安）">
+      <span class="node base">ホテル</span><span class="hop">30分</span>
+      <span class="node">狩俣・西平安名岬</span><span class="hop">5分</span>
+      <span class="node">池間大橋</span><span class="hop">5分</span>
+      <span class="node">池間島</span><span class="hop">30分</span>
+      <span class="node base">ホテル（ハイサイ）</span>
+    </div>
+
+    <p class="day-note">このエリアは他より<strong>軽め</strong>です。半日で足りるので、<strong>余った半日を2日目の積み残し（伊良部）に回す</strong>手もあります。ただし——</p>
+
+    <div class="caution"><b>3日目を木曜（9/24）に入れ替えるのは危険です。</b> にいまそばとDOUG'S BURGER池間島店が<b>どちらも木曜定休</b>なので、昼の選択肢がほぼ消えます。水曜のままがベスト。<br><b>この日休みの可能性：</b> Ikemajima gelato cafe Ninufa（水曜定休の情報。水木定休という情報もあり要確認）。</div>
+
+    <div class="cat">
+      <h3>観光</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">池間大橋<span class="rec">地元</span></span><span class="p-note">全長1,425m、1992年開通。通行無料、駐車場・トイレあり、池間島側に売店・休憩所</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B1%A0%E9%96%93%E5%A4%A7%E6%A9%8B" aria-label="池間大橋 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyako-guide.net/spots/spots-893/" aria-label="池間大橋 観光協会ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E6%B1%A0%E9%96%93%E5%A4%A7%E6%A9%8B" aria-label="池間大橋 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>ランチ</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">DOUG&#39;S BURGER 池間島店</span><span class="p-note">池間島。コンテナ改装＋テラス席。11:00〜17:30、<b>木曜定休</b>。※広島・名古屋・石垣島にもあるチェーン</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E3%83%80%E3%82%B0%E3%82%BA%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%E6%B1%A0%E9%96%93%E5%B3%B6%E5%BA%97+(Doug's+burger+ikemajima)/data=!4m2!3m1!1s0x34f44d8cc4bf2371:0x3a892fc965d1399d" aria-label="DOUGS BURGER をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.dougsburger.com/" aria-label="DOUGS BURGER 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=dougsburger+%E6%B1%A0%E9%96%93%E5%B3%B6" aria-label="DOUGS BURGER をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">にいまそば<span class="rec">地元</span></span><span class="p-note">平良狩俣（池間島ではなく本島北部）。11:00〜15:00・売り切れ次第終了、<b>木曜定休</b>。<b>開店直後に満車になる人気店</b></span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E3%81%AB%E3%81%84%E3%81%BE%E3%81%9D%E3%81%B0/data=!4m2!3m1!1s0x34f44d994bfdb873:0x5d64b94eec6db354" aria-label="にいまそば をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%81%AB%E3%81%84%E3%81%BE%E3%81%9D%E3%81%B0+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93+%E5%AE%9A%E4%BC%91%E6%97%A5" aria-label="にいまそば を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%AB%E3%81%84%E3%81%BE%E3%81%9D%E3%81%B0" aria-label="にいまそば をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">HARRY&#39;S Shrimp Truck</span><span class="p-note"><b>狩俣・西平安名岬の展望台前</b>（池間島ではない）。スクールバス改造のフードトラック、ガーリックシュリンプ専門。11:00〜L.O.17:00・年中無休</span></div><div class="p-links"><a href="https://www.google.com/maps/place/HARRY'S+Shrimp+Truck+%2F%E3%83%8F%E3%83%AA%E3%83%BC%E3%82%BA/data=!4m2!3m1!1s0x34f44d8ee8d4434b:0x6f76e48c78ee18ae" aria-label="HARRYS Shrimp Truck をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.harrys.fun/" aria-label="HARRYS Shrimp Truck 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=harrys+shrimp+truck+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="HARRYS Shrimp Truck をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>カフェ・デザート</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">宮古きび茶屋</span><span class="p-note"><b>狩俣129・池間大橋の手前</b>（雪塩ミュージアム近く）。名物は<b>自分で絞る生搾りさとうきびジュース</b>（本数限定）。<b>支払いは現金のみ</b>。営業時間・定休日は情報がバラバラなのでInstagramで要確認</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E5%AE%AE%E5%8F%A4%E3%81%8D%E3%81%B3%E8%8C%B6%E5%B1%8B+%E3%81%95%E3%81%A8%E3%81%86%E3%81%8D%E3%81%B3%E7%94%98%E5%91%B3%E5%87%A6/data=!4m2!3m1!1s0x34f44d2d7c7899b9:0xd6c7abbad21e2dce" aria-label="宮古きび茶屋 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E5%AE%AE%E5%8F%A4%E3%81%8D%E3%81%B3%E8%8C%B6%E5%B1%8B+%E7%8B%A9%E4%BF%A3+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93" aria-label="宮古きび茶屋 を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E5%AE%AE%E5%8F%A4%E3%81%8D%E3%81%B3%E8%8C%B6%E5%B1%8B" aria-label="宮古きび茶屋 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">Ikemajima gelato cafe Ninufa<span class="shut">水曜休か</span></span><span class="p-note">池間島。隣接ビーチに<b>ハート岩</b>（干潮時のみ接近可）。営業時間・定休日は情報が割れるのでInstagramで要確認</span></div><div class="p-links"><a href="https://www.google.com/maps/place/gelato+Cafe+Ninufa/data=!4m2!3m1!1s0x34f44d173aba1493:0x51cb5fcedb4bcbca" aria-label="Ninufa をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://ninufa.theshop.jp/" aria-label="Ninufa 公式ショップ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=ninufa+%E6%B1%A0%E9%96%93%E5%B3%B6" aria-label="Ninufa をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ DAY 4 ══ -->
+  <section class="day" id="d4">
+    <div class="day-head">
+      <span class="day-n">04</span>
+      <span class="day-meta">
+        <span class="day-date">9月24日（木）</span>
+        <span class="day-area">島の南側 — 東 → 西へ周回</span>
+      </span>
+    </div>
+
+    <ol class="rail">
+      <li class="open"><time>07:00–09:30</time><span class="what">ホテル朝食</span></li>
+      <li class="open"><time>08:30–18:00</time><span class="what">空き — 1日まるごと</span></li>
+      <li class="open"><time>19:00–</time><span class="what">空き — 最後の夜／星空の予備日</span></li>
+    </ol>
+
+    <div class="chain" aria-label="4日目の移動（所要は目安）">
+      <span class="node base">ホテル</span><span class="hop">30分</span>
+      <span class="node">新城海岸</span><span class="hop">20分</span>
+      <span class="node">シギラ</span><span class="hop">15分</span>
+      <span class="node">与那覇前浜</span><span class="hop">7分</span>
+      <span class="node">来間島</span><span class="hop">25分</span>
+      <span class="node base">ホテル</span>
+    </div>
+
+    <p class="day-note"><strong>新城海岸 → シギラ → 与那覇前浜 → 来間島</strong> が一直線なので、戻りが一切発生しません。最終フル日なので<strong>土産もこの日</strong>に。RICCO gelato と 果実家は、1日目に行っていなければこの日が最後のチャンスです。</p>
+
+    <div class="cat">
+      <h3>ビーチ</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">新城海岸（あらぐすく海岸）<span class="rec">地元</span></span><span class="p-note">城辺の東海岸。<b>ウミガメ</b>でシュノーケルの本命。無料＋有料駐車場、トイレ・シャワー・更衣室あり、海の家で用具レンタル可（1日2,000〜3,000円目安）。<b>ライフガードなし＝自己責任</b>。<b>干潮時は極端に浅くなるので満潮前後がおすすめ</b></span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E6%96%B0%E5%9F%8E%E6%B5%B7%E5%B2%B8/data=!4m2!3m1!1s0x34f4598794eaed45:0x3dae6702d4f65d79" aria-label="新城海岸 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyako-island.net/beach_and_spot/beach_spot_005/" aria-label="新城海岸 観光協会ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E6%96%B0%E5%9F%8E%E6%B5%B7%E5%B2%B8+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="新城海岸 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">シギラビーチ<span class="rec">地元</span></span><span class="p-note">上野・シギラセブンマイルズリゾート内。<b>入場無料・駐車場無料</b>、トイレ・シャワー・売店あり。設備が整っていて入りやすい</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B7%E3%82%AE%E3%83%A9%E3%83%93%E3%83%BC%E3%83%81+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="シギラビーチ をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://shigira.com/" aria-label="シギラリゾート 公式サイト"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%82%B7%E3%82%AE%E3%83%A9%E3%83%93%E3%83%BC%E3%83%81" aria-label="シギラビーチ をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">与那覇前浜<span class="rec">地元</span></span><span class="p-note">日本ビーチランキング1位。無料駐車場2か所（中央付近 約30台）、トイレ・更衣室あり、シャワーは有料。<b>ハイシーズンは午前中で満車</b></span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E4%B8%8E%E9%82%A3%E8%A6%87%E5%89%8D%E6%B5%9C/data=!4m2!3m1!1s0x34f4559004ecf939:0x4a5129e59bbe4503" aria-label="与那覇前浜 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyako-island.net/beach_and_spot/beach_spot_022/" aria-label="前浜ビーチ 観光協会ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E4%B8%8E%E9%82%A3%E8%A6%87%E5%89%8D%E6%B5%9C" aria-label="与那覇前浜 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat">
+      <h3>観光</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">来間大橋・来間島</span><span class="p-note">全長1,690m、農道橋として国内最大級。通行無料・歩道あり。島内の竜宮城展望台に駐車場・トイレ・売店</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%A5%E9%96%93%E5%A4%A7%E6%A9%8B" aria-label="来間大橋 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://miyako-island.net/beach_and_spot/beach_spot_013/" aria-label="来間大橋 観光協会ページ"><svg><use href="#i-link"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E6%9D%A5%E9%96%93%E5%B3%B6" aria-label="来間島 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>ランチ</h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">キッチンみほりん<span class="rec">地元</span></span><span class="p-note">上野字宮国（シギラ／ドイツ文化村の近く）。名物は<b>冷やし宮古そば</b>（約1,000円・天ぷら付き、宮古島もずく＋大根おろし）。11:00〜15:00、<b>日曜定休</b>。2004年創業</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3%E3%81%BF%E3%81%BB%E3%82%8A%E3%82%93+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E4%B8%8A%E9%87%8E" aria-label="キッチンみほりん をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3%E3%81%BF%E3%81%BB%E3%82%8A%E3%82%93+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%86%B7%E3%82%84%E3%81%97%E5%AE%AE%E5%8F%A4%E3%81%9D%E3%81%B0" aria-label="キッチンみほりん を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%BF%E3%81%BB%E3%82%8A%E3%82%93+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="キッチンみほりん をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">お食事処 ひろちゃん<span class="rec">地元</span></span><span class="p-note">上野宮国・国道390号沿い（黄色い三角看板）。11:00〜21:00、定食650円〜のローカル価格。<b>山口県にも同名店があるので検索は「宮古島」付きで</b></span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%B2%E3%82%8D%E3%81%A1%E3%82%83%E3%82%93+%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E4%B8%8A%E9%87%8E%E5%AE%AE%E5%9B%BD" aria-label="お食事処 ひろちゃん をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%81%B2%E3%82%8D%E3%81%A1%E3%82%83%E3%82%93%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E4%B8%8A%E9%87%8E+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93" aria-label="ひろちゃん を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%81%B2%E3%82%8D%E3%81%A1%E3%82%83%E3%82%93%E9%A3%9F%E5%A0%82+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="ひろちゃん をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+        <li><div class="p-main"><span class="p-name">タコライス専門店 Shot<span class="rec">地元</span></span><span class="p-note">下地字上地（<b>与那覇前浜のすぐ近く</b>）。古民家改装。S/M/L×6種ソースを組み合わせ自由。11:30〜16:30、不定休、テイクアウト可</span></div><div class="p-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%BF%E3%82%B3%E3%83%A9%E3%82%A4%E3%82%B9%E5%B0%82%E9%96%80%E5%BA%97+Shot+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="Shot をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E3%82%BF%E3%82%B3%E3%83%A9%E3%82%A4%E3%82%B9%E5%B0%82%E9%96%80%E5%BA%97+Shot+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93" aria-label="Shot を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E3%82%BF%E3%82%B3%E3%83%A9%E3%82%A4%E3%82%B9%E5%B0%82%E9%96%80%E5%BA%97+shot+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="Shot をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+
+    <div class="cat" data-kind="food">
+      <h3>夜ごはん <span class="hint">最後の夜。1日目の平良リストから未消化のものも</span></h3>
+      <ul class="places">
+        <li><div class="p-main"><span class="p-name">Fine Dining 久玄達</span><span class="p-note"><b>城辺字長間</b>（平良ではなく東部・市街から車移動）。牧舎を改築した一軒家でデッキ席あり。<b>完全予約制の記載あり</b>。新城海岸の帰り道に寄れます</span></div><div class="p-links"><a href="https://www.google.com/maps/place/%E5%B1%85%E9%85%92%E5%B1%8B+FineDining+%E4%B9%85%E7%8E%84%E9%81%94/data=!4m2!3m1!1s0x34f4572878bab5f3:0x7a9b0c2059df1ad7" aria-label="久玄達 をマップで見る"><svg><use href="#i-map"/></svg></a><a href="https://www.google.com/search?q=%E4%B9%85%E7%8E%84%E9%81%94+%E5%AE%AE%E5%8F%A4%E5%B3%B6+%E5%9F%8E%E8%BE%BA+%E4%BA%88%E7%B4%84" aria-label="久玄達 を検索"><svg><use href="#i-search"/></svg></a><a href="https://www.instagram.com/explore/search/keyword/?q=%E4%B9%85%E7%8E%84%E9%81%94+%E5%AE%AE%E5%8F%A4%E5%B3%B6" aria-label="久玄達 をInstagramで見る"><svg><use href="#i-ig"/></svg></a></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ DAY 5 ══ -->
+  <section class="day" id="d5">
+    <div class="day-head">
+      <span class="day-n">05</span>
+      <span class="day-meta">
+        <span class="day-date">9月25日（金）</span>
+        <span class="day-area">移動のみ</span>
+      </span>
+    </div>
+
+    <ol class="rail">
+      <li class="open"><time>07:00</time><span class="what">ホテル朝食 → 荷造り</span></li>
+      <li class="fixed"><time>09:30</time><span class="what">チェックアウト・出発<span class="tag">確定</span></span></li>
+      <li class="fixed"><time>10:00</time><span class="what">レンタカー返却 → 空港へ送迎<span class="tag">確定</span></span></li>
+      <li class="fixed"><time>11:40</time><span class="what">NH1080 宮古空港発<span class="tag">確定</span></span></li>
+      <li class="fixed"><time>14:25</time><span class="what">羽田T2着<span class="tag">確定</span></span></li>
+    </ol>
+
+    <p class="day-note"><strong>観光を入れる余地はありません。</strong> 土産は4日目までに買っておくこと。空港での買い物だけが最後のチャンスです。</p>
+  </section>
+
+  <!-- ══ EXTRAS ══ -->
+  <section class="sec" id="extras">
+    <h2><span class="idx">EXTRA</span>番外編 — エリアをまたぐ「やりたいこと」</h2>
+    <p class="lede">まだ日が決まっていないもの。どれも要予約なので、決めたら早めに押さえます。</p>
+
+    <div class="extra">
+      <h3><span class="key">A</span>星空 <span class="must">必ず行く</span></h3>
+      <p>滞在中は<strong>月齢10〜14</strong>で、日没から深夜までずっと月が明るい週です。天の川くっきりは期待しにくいので、<strong>天体望遠鏡付きのツアー</strong>にすると月明かりが逆に強みになります（月のクレーター・惑星が主役）。</p>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>夜</th><th>月が沈む</th><th></th></tr></thead>
+          <tbody>
+            <tr class="hi"><td>9/21（月）</td><td class="num">約 1:30</td><td>条件が一番マシ／夜が空いている → <strong>第1希望</strong></td></tr>
+            <tr><td>9/22（火）</td><td class="num">約 2:35</td><td>郷家18:15のあと 20:00開始なら可</td></tr>
+            <tr><td>9/23（水）</td><td class="num">約 3:40</td><td>ハイサイ18:00のあと 20:00開始なら可</td></tr>
+            <tr class="hi"><td>9/24（木）</td><td class="num">約 4:40</td><td>夜が空いている → <strong>予備日</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>送迎付きを選ぶかどうかで、その夜に飲めるかが決まります。</strong> 雨天曇天は中止になるので予備日は必須。</p>
+      <ul class="links">
+        <li><a href="https://hoshinavi-subaru.com/">星空ナビすばる</a> <span>— 満月前後の期間限定ツアーあり</span></li>
+        <li><a href="https://miyako-tour.com/">宮古島ツアーズ</a> <span>— 望遠鏡付き・当日予約OK</span></li>
+        <li><a href="https://act.shigira.com/">シギラリゾート 南星☆楽園の夜空観賞ツアー</a> <span>— 4日目のシギラと合わせやすい</span></li>
+        <li><a href="https://www.seawoodhotel.com/stargazing-tour">シーウッドホテル STARGAZING TOUR（来間島）</a> <span>— 4日目の来間島と合わせやすい</span></li>
+      </ul>
+    </div>
+
+    <div class="extra">
+      <h3><span class="key">B</span>マリンアクティビティ</h3>
+      <p><strong>1グループ完全貸切・1時間・6種類のマリンスポーツ遊び放題</strong>というプランがあります。何名でも同料金。</p>
+      <p><strong>開催ビーチがどこかで入る日が決まります。</strong> 与那覇前浜開催なら4日目、平良近郊なら1日目に入れられます。</p>
+      <ul class="links">
+        <li><a href="https://www.asoview.com/item/activity/pln3000034921/">アソビュー — 完全貸切1時間遊び放題・全6種</a></li>
+        <li><a href="https://activityjapan.com/feature/miyakojima_marinsports/">アクティビティジャパン — マリンスポーツ特集</a></li>
+      </ul>
+    </div>
+
+    <div class="extra">
+      <h3><span class="key">C</span>シュノーケリング</h3>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>場所</th><th>日</th><th>特徴</th></tr></thead>
+          <tbody>
+            <tr class="hi"><td>新城海岸（あらぐすく）</td><td class="num">4日目</td><td>ウミガメ遭遇率が高い。用具レンタルあり。<strong>満潮前後がおすすめ</strong></td></tr>
+            <tr><td>中の島ビーチ</td><td class="num">2日目</td><td>下地島の入江。穏やかだが<strong>設備なし・朝10時までに行かないと満車</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>ウミガメ狙いなら新城海岸（4日目）に一本化するのがおすすめ。</strong> 2日目にも入れると伊良部が完全にパンクします。</p>
+      <ul class="links">
+        <li><a href="https://www.veltra.com/jp/japan/okinawa/miyako_island/ctg/185320:Miyako_Sea_Turtle_Snorkel/">VELTRA — ウミガメシュノーケリング一覧</a></li>
+        <li><a href="https://www.asoview.com/leisure/15/location/are0471708/">アソビュー — 宮古島シュノーケリング</a></li>
+      </ul>
+    </div>
+
+    <div class="extra">
+      <h3><span class="key">D</span>ユニの浜（幻の砂浜）</h3>
+      <p>干潮時にだけ現れる砂浜で、毎回かたちが変わります。<strong>場所は伊良部大橋のすぐ近く</strong>（宮古島と伊良部島の間の海上）でホテルから近いです。SUP／カヤック／ボートの3タイプがあり、ボートなら港から5分・約90分。<strong>干満で開催時刻が毎日変わり、開催できない日もあります。</strong></p>
+      <p><strong>集合場所はトゥリバーマリーナ／トゥリバー海浜公園がほとんどで、ホテルから車で約5分</strong>です。ボートなら橋の下をくぐって約5分、シーカヤックなら20〜30分。移動が短いので、<strong>どの日の午前にも差し込めます</strong>——干潮の時刻さえ合えば。</p>
+      <ul class="links">
+        <li><a href="https://activityjapan.com/feature/miyakojima_yuninohama/">アクティビティジャパン — ユニの浜特集</a></li>
+        <li><a href="https://www.veltra.com/jp/japan/okinawa/miyako_island/ctg/199165:yuninohama/">VELTRA — ユニの浜</a></li>
+        <li><a href="https://experiences.travel.rakuten.co.jp/experiences/59478">楽天トラベル観光体験 — SUPツアー</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ TODO ══ -->
+  <section class="sec" id="todo">
+    <h2><span class="idx">NEXT</span>次に決めること</h2>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>#</th><th>決めること</th><th>なぜ急ぐか</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td class="num">1</td><td>星空ツアーの会社と日（送迎の有無も）</td><td>予約が要る／飲めるかが変わる</td></tr>
+          <tr><td class="num">2</td><td>ユニの浜をやるか。やるなら9/21〜24のどの日の干潮に合わせるか</td><td>開催時刻が日によって動く</td></tr>
+          <tr><td class="num">3</td><td>17ENDの干潮時刻（砂浜が出る時間）</td><td>満潮だとビーチに降りられない</td></tr>
+          <tr><td class="num">4</td><td>マリンアクティビティの開催ビーチ</td><td>入る日が決まる</td></tr>
+          <tr><td class="num">5</td><td>2日目のビーチをどれにするか（渡口の浜／中の島／17END）</td><td>16時に島を出る必要がある</td></tr>
+          <tr><td class="num">6</td><td>1日目・4日目の夜の店</td><td>でいりぐちは予約必須・電話のみ</td></tr>
+          <tr><td class="num">7</td><td>ホテルの予約が実際に取れているか</td><td>Gmailに予約確認メールが見当たらない</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>新しい店が出てきたら、該当する日のカテゴリに1行足すだけでOKです。掲載情報はWeb上の公開情報をもとに確認したものです。営業時間・定休日は変わることがあるので、行く前にリンク先で最終確認してください。</p>
+    <dl>
+      <dt>地元</dt><dd>やまちゃんおすすめ</dd>
+      <dt>確定</dt><dd>予約済み・動かせない</dd>
+      <dt>アイコン</dt><dd>ピン＝Googleマップ ／ 鎖＝公式サイト ／ 虫めがね＝営業時間・定休日を検索 ／ 四角＝Instagram（みんなの投稿）</dd>
+    </dl>
+  </footer>
+
+</div>
+
+</body>
+</html>
