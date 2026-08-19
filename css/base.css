@@ -52,6 +52,14 @@ body {
   line-height: 1.6;
 }
 
+/* 保険。仕様上、body の overflow:hidden がビューポートに伝播するのは html の
+   overflow が visible のときだけで、上の overflow-x:clip が伝播を止め得る。
+   Chromium では下の body 指定だけで実際に止まったが、iOS Safari の挙動差に備えて
+   html 側でも明示しておく（効いている場合は二重指定になるだけで害はない） */
+html:has(body.sheet-open) {
+  overflow: hidden;
+}
+
 body.sheet-open {
   overflow: hidden;
 }

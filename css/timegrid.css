@@ -157,6 +157,68 @@
   overflow-wrap: anywhere;
 }
 
+/* 予約済みバッジは絶対配置なので、逃げを作らないと時刻の上に重なる */
+.tg-block:has(.tg-reserved) .tg-block-time {
+  padding-right: 62px;
+}
+
+/* 高さが足りないブロック（約40分未満）は、縦積みだと文字が横一直線に切れる。
+   時刻とタイトルを横に並べて1行に収め、あふれは「…」で示す */
+.tg-block.is-short {
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.tg-block.is-short .tg-block-time {
+  flex: 0 0 auto;
+}
+
+/* 横並びのときは時刻の右ではなく、ブロックの右端にバッジ分の逃げを作る
+   （時刻に逃げを付けるとタイトルがバッジの下に押し込まれて潰れる） */
+.tg-block.is-short:has(.tg-reserved) {
+  padding-right: 64px;
+}
+
+.tg-block.is-short:has(.tg-reserved) .tg-block-time {
+  padding-right: 0;
+}
+
+.tg-block.is-short.is-narrow:has(.tg-reserved) {
+  padding-right: 26px;
+}
+
+.tg-block.is-short .tg-block-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 3つ以上重なって枠が狭いときは、バッジを絵文字だけに縮めて場所を空ける */
+.tg-block.is-narrow .tg-reserved {
+  font-size: 0;
+  padding: 1px 4px;
+}
+
+.tg-block.is-narrow .tg-reserved::after {
+  content: '🎫';
+  font-size: 10px;
+}
+
+.tg-block.is-narrow:has(.tg-reserved) .tg-block-time {
+  padding-right: 24px;
+}
+
+.tg-block.is-narrow .tg-block-time {
+  min-width: 0;
+  font-size: 9px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ---- いまここライン ---- */
 .tg-now {
   position: absolute;

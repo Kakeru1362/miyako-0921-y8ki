@@ -373,13 +373,19 @@
 .sheet-top h2 {
   font-size: 18px;
   font-weight: 900;
+  /* 長い予定名のとき、縮むのは見出し側。ボタンを押しつぶさせない */
+  min-width: 0;
 }
 
 .sheet-close {
+  /* これが無いと、長いタイトルに押されて「と/じ/る」と縦積みになる */
+  flex: 0 0 auto;
+  white-space: nowrap;
   font-size: 14px;
   font-weight: 700;
   color: var(--ink-soft);
   padding: 6px 10px;
+  min-height: 44px;
 }
 
 .field {

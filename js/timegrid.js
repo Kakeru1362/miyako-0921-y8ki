@@ -87,8 +87,13 @@ function buildBlock(block, gridStartMin, onOpen, isNew) {
   node.type = 'button'
   node.style.setProperty('--cat', cat.color)
   node.style.setProperty('--cat-tint', cat.tint)
+  const height = Math.max(26, ((endMin - startMin) / 60) * HOUR_H - 2)
   node.style.top = `${((startMin - gridStartMin) / 60) * HOUR_H}px`
-  node.style.height = `${Math.max(26, ((endMin - startMin) / 60) * HOUR_H - 2)}px`
+  node.style.height = `${height}px`
+  // 時刻とタイトルを縦に積むには最低42px要る。足りないブロックは横並びに切り替える
+  if (height < 42) node.classList.add('is-short')
+  // 3つ以上重なると1枠が狭くなり、予約済みバッジが時刻の上に乗ってしまう
+  if (cols >= 3) node.classList.add('is-narrow')
   node.style.left = `calc(var(--label-w) + (100% - var(--label-w)) * ${col} / ${cols})`
   node.style.width = `calc((100% - var(--label-w)) / ${cols} - 4px)`
   if (!ev.end) node.classList.add('is-open-ended')
